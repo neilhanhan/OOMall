@@ -12,10 +12,10 @@ public interface BrandMapper {
     /**
      * create a brand
      *
-     * @param Brand brand;
-     * @return id id
+     * @param brand
+     * @return id
      */
-    Integer createBrand(Brand brand);
+    Integer addBrand(Brand brand);
 
     /**
      * search brands by param
@@ -23,7 +23,7 @@ public interface BrandMapper {
      * @param ???
      * @return List<Brand>
      */
-    List<Brand> findAllBrand();
+    List<Brand> listBrandByCodition(String name);
 
     /**
      * search brand info by id
@@ -36,16 +36,16 @@ public interface BrandMapper {
     /**
      * update brand by id
      *
-     * @param id id
+     * @param id ,brand
      * @return Brand
      */
-    Brand updataBrandById(Integer id);
+    Brand updateBrandById(Integer id,Brand brand);
 
     /**
      * delete data by id
      *
      * @param id id
-     * @return Brand
+     * @return
      */
-    Brand deleteBrandById(Integer id);
+    void deleteBrandById(Integer id);
 }

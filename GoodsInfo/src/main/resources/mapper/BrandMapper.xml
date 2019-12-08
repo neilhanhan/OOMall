@@ -1,19 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xmu.oomall.mapper.BrandMapper">
-    <select id="getBrandById" resultType="com.xmu.oomall.domain.Brand" parameterType="int">
+    <select id="getBrandById" resultType="com.xmu.oomall.domain.Brand" parameterType="Integer">
         select * from brand where id =# {id};
     </select>
 
-    <insert id="createBrand" parameterType="com.xmu.oomall.domain.Brand">
+    <insert id="addBrand" parameterType="com.xmu.oomall.domain.Brand">
         <selectKey keyColumn="id" keyProperty="id" resultType="int">
             select last_insert_id();
         </selectKey>
         insert into brand(name,description,pic_url,gmt_create,gmt_modified,is_deleted)
-                values(#(brandname),#(description),#(pic_url),#(gmt_create),#(gmt_modified),#(is_deleted));
+                values(#(name),#(description),#(picUrl),#(gmtCreate),#(gmtModified),#(beDeleted));
     </insert>
 
-    <update id="updataBrandById"  parameterType="com.xmu.oomall.domain.Brand">
+    <update id="updateBrandById"  parameterType="com.xmu.oomall.domain.Brand">
         update brand
+        <trim prefix="set" suffixOverrides=",">
+            <if test="name!=null">name=#{name},</if>
+            <if test="description!=null">description=#{description},</if>
+            <if test="picUrl!=null">pic_url=#{picUrl},</if>
+            <if test="gmtCreate!=null">gmt_create=#{gmtCreate},</if>
+            <if test="gmtModified!=null">gmt_modified=#{gmtModified},</if>
+            <if test="beDeleted!=null">is_deleted=#{beDeleted}</if>
+        </trim>
+        where id=#{id};
     </update>
+
+    <delete id="deleteBrandById" parameterType="com.xmu.oomall.domain.Brand">
+        delete from brand where id =#{id};
+    </delete>
+
+    <select id="listBrandByCodition" resultType="com.xmu.oomall.domain.Brand" parameterType="String">
+        select * from brand where name like #{name}
+    </select>
 </mapper>
