@@ -5,12 +5,11 @@ spring:
   datasource:
     username: root
     password: cai123
-    url: jdbc:mysql://localhost:3306/address?serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/oomall?serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
-
 mybatis:
   #domain对象的包
-  type-aliases-package: com.xmu.address.domain
+  type-aliases-package: com.xmu.oomall.domain
   #mapper。xml所在的位置
   mapper-locations: classpath:mapper/*.xml
   configuration:

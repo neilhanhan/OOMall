@@ -1,5 +1,6 @@
 package com.xmu.oomall.domain;
 
+
 import org.apache.ibatis.type.Alias;
 
 import java.math.BigDecimal;
@@ -153,7 +154,7 @@ public class Goods {
 
     public void setName(String name) {
         this.name = name;
-    }
+}
 
     public String getGoodsSn() {
         return goodsSn;
