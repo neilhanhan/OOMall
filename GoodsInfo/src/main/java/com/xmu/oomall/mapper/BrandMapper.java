@@ -15,8 +15,7 @@ public interface BrandMapper {
      * @param id id
      * @return Brand
      */
-    根据品牌id查看详细信息
-    void findBrandById(Integer id);
+    Brand findBrandById(Integer id);
 
     /**
      * update brand by id
