@@ -2,20 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xmu.oomall.mapper.BrandMapper">
     <select id="getBrandById" resultType="com.xmu.oomall.domain.Brand" parameterType="Integer">
-        select * from brand where id =# {id};
+        select * from brand where id =#{id};
     </select>
 
-    <insert id="addBrand" parameterType="com.xmu.oomall.domain.Brand">
-        <selectKey keyColumn="id" keyProperty="id" resultType="int">
-            select last_insert_id();
-        </selectKey>
-        insert into brand(name,description,pic_url,gmt_create,gmt_modified,is_deleted)
-                values(#(name),#(description),#(picUrl),#(gmtCreate),#(gmtModified),#(beDeleted));
-    </insert>
-
-    <update id="updateBrandById"  parameterType="com.xmu.oomall.domain.Brand">
+    <update id="updateBrandById"  parameterType="Brand">
         update brand
         <trim prefix="set" suffixOverrides=",">
+            <if test="id!=null">id=#{id},</if>
             <if test="name!=null">name=#{name},</if>
             <if test="description!=null">description=#{description},</if>
             <if test="picUrl!=null">pic_url=#{picUrl},</if>
@@ -26,11 +19,15 @@
         where id=#{id};
     </update>
 
-    <delete id="deleteBrandById" parameterType="com.xmu.oomall.domain.Brand">
-        delete from brand where id =#{id};
-    </delete>
+    <insert id="addBrand" parameterType="com.xmu.oomall.domain.Brand" useGeneratedKeys="true" keyProperty="id">
+        insert into brand(name,description,pic_url,gmt_create,gmt_modified,is_deleted) values(#{name},#{description},#{picUrl},#{gmtCreate},#{gmtModified},#{beDeleted});
+    </insert>
 
-    <select id="listBrandByCodition" resultType="com.xmu.oomall.domain.Brand" parameterType="String">
-        select * from brand where name like #{name}
-    </select>
+<!--    <delete id="deleteBrandById" parameterType="Integer">-->
+<!--        delete from brand where id =#{id};-->
+<!--    </delete>-->
+
+<!--    <select id="listBrandByCodition" resultType="com.xmu.oomall.domain.Brand" parameterType="String">-->
+<!--        select * from brand where name like #{name}-->
+<!--    </select>-->
 </mapper>

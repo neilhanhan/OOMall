@@ -9,21 +9,6 @@ import java.util.List;
 @Mapper
 @Repository
 public interface BrandMapper {
-    /**
-     * create a brand
-     *
-     * @param brand
-     * @return id
-     */
-    Integer addBrand(Brand brand);
-
-    /**
-     * search brands by param
-     *
-     * @param ???
-     * @return List<Brand>
-     */
-    List<Brand> listBrandByCodition(String name);
 
     /**
      * search brand info by id
@@ -33,19 +18,37 @@ public interface BrandMapper {
      */
     Brand getBrandById(Integer id);
 
-    /**
-     * update brand by id
-     *
-     * @param id ,brand
-     * @return Brand
-     */
-    Brand updateBrandById(Integer id,Brand brand);
+//    /**
+//     * update brand by id
+//     *
+//     * @param brand
+//     * @return Brand
+//     */
+//    Integer updateBrandById(Brand brand);
+//
+//    /**
+//     * create a brand
+//     *
+//     * @param brand
+//     * @return id
+//     */
+//    void addBrand(Brand brand);
 
-    /**
-     * delete data by id
-     *
-     * @param id id
-     * @return
-     */
-    void deleteBrandById(Integer id);
+//    /**
+//     * search brands by param
+//     *
+//     * @param ???
+//     * @return List<Brand>
+//     */
+//    List<Brand> listBrandByCodition(String name);
+//
+//
+//
+//    /**
+//     * delete data by id
+//     *
+//     * @param id id
+//     * @return
+//     */
+//    void deleteBrandById(Integer id);
 }
