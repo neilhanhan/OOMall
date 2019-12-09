@@ -20,27 +20,27 @@ public class BrandController {
         return brandService.getBrandById(id);
     }
 
-//    @PutMapping("/brands/{id}")
-//    public Brand updateBrandById(@PathVariable Integer id,@RequestBody Brand brand)
-//    {
-//        return brandService.updateBrandById(id,brand);
-//    }
+    @PutMapping("/brands/{id}")
+    public Brand updateBrandById(@PathVariable Integer id,@RequestBody Brand brand)
+    {
+        return brandService.updateBrandById(id,brand);
+    }
 
-//    @PostMapping("/brands")
-//    public Integer addBrand(@RequestBody Brand brand)
-//    {
-//        return brandService.addBrand(brand);
-//    }
+    @PostMapping("/brands")
+    public Integer addBrand(@RequestBody Brand brand)
+    {
+        return brandService.addBrand(brand);
+    }
 
-//    @DeleteMapping("/brands/{id}")
-//    public Brand deleteBrandById(@PathVariable Integer id)
-//    {
-//        return brandService.deleteBrandById(id);
-//    }
-//
-//    @GetMapping("/admins/brands")
-//    public List<Brand> listBrandByCodition(String name)
-//    {
-//        return brandService.listBrandByCodition(name);
-//    }
+    @DeleteMapping("/brands/{id}")
+    public Brand deleteBrandById(@PathVariable Integer id)
+    {
+        return brandService.deleteBrandById(id);
+    }
+
+    @GetMapping("/admins/brands/{name}")
+    public List<Brand> listBrandByCodition(@PathVariable String name)
+    {
+        return brandService.listBrandByCodition(name);
+    }
 }

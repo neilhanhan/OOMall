@@ -18,20 +18,23 @@ public class BrandService {
         return brandDao.getBrandById(id);
     }
 
-//    public Brand updateBrandById(Integer id,Brand brand){return brandDao.updateBrandById(id,brand);}
-//
-//    public Integer addBrand(Brand brand)
-//    {
-//        return brandDao.addBrand(brand);
-//    }
+    public Brand updateBrandById(Integer id,Brand brand)
+    {
+        return brandDao.updateBrandById(id,brand);
+    }
 
-//    public Brand deleteBrandById(Integer id)
-//    {
-//        return brandDao.deleteBrandById(id);
-//    }
-//
-//    public List<Brand>listBrandByCodition(String name)
-//    {
-//        return brandDao.listBrandByCodition(name);
-//    }
+    public Integer addBrand(Brand brand)
+    {
+        return brandDao.addBrand(brand);
+    }
+
+    public Brand deleteBrandById(Integer id)
+    {
+        return brandDao.deleteBrandById(id);
+    }
+
+    public List<Brand>listBrandByCodition(String name)
+    {
+        return brandDao.listBrandByCodition(name);
+    }
 }

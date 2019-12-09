@@ -5,7 +5,7 @@
         select * from brand where id =#{id};
     </select>
 
-    <update id="updateBrandById"  parameterType="Brand">
+    <update id="updateBrandById"  parameterType="com.xmu.oomall.domain.Brand" >
         update brand
         <trim prefix="set" suffixOverrides=",">
             <if test="id!=null">id=#{id},</if>
@@ -23,11 +23,11 @@
         insert into brand(name,description,pic_url,gmt_create,gmt_modified,is_deleted) values(#{name},#{description},#{picUrl},#{gmtCreate},#{gmtModified},#{beDeleted});
     </insert>
 
-<!--    <delete id="deleteBrandById" parameterType="Integer">-->
-<!--        delete from brand where id =#{id};-->
-<!--    </delete>-->
+    <delete id="deleteBrandById" parameterType="Integer">
+        delete from brand where id =#{id};
+    </delete>
 
-<!--    <select id="listBrandByCodition" resultType="com.xmu.oomall.domain.Brand" parameterType="String">-->
-<!--        select * from brand where name like #{name}-->
-<!--    </select>-->
+    <select id="listBrandByCodition" resultType="com.xmu.oomall.domain.Brand" parameterType="String">
+        select * from brand where name like #{name}
+    </select>
 </mapper>

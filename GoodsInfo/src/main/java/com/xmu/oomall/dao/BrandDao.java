@@ -18,29 +18,29 @@ public class BrandDao {
         return brandMapper.getBrandById(id);
     }
 
-//    public Brand updateBrandById(Integer id,Brand brand)
-//    {
-//        brand.setId(id);
-//        return brandMapper.updateBrandById(brand);
-//    }
-//
-//    public Integer addBrand(Brand brand)
-//    {
-//        brandMapper.addBrand(brand);
-//        int id=brand.getId();
-//        return id;
-//    }
+    public Brand updateBrandById(Integer id,Brand brand)
+    {
+        brandMapper.updateBrandById(brand);
+        return brandMapper.getBrandById(id);
+    }
+
+    public Integer addBrand(Brand brand)
+    {
+        brandMapper.addBrand(brand);
+        int id=brand.getId();
+        return id;
+    }
 
 
-//    public Brand deleteBrandById(Integer id)
-//    {
-//        Brand brand=brandMapper.getBrandById(id);
-//        brandMapper.deleteBrandById(id);
-//        return brand;
-//    }
-//
-//    public List<Brand> listBrandByCodition(String name)
-//    {
-//        return brandMapper.listBrandByCodition(name);
-//    }
+    public Brand deleteBrandById(Integer id)
+    {
+        Brand brand=brandMapper.getBrandById(id);
+        brandMapper.deleteBrandById(id);
+        return brand;
+    }
+
+    public List<Brand> listBrandByCodition(String name)
+    {
+        return brandMapper.listBrandByCodition(name);
+    }
 }
