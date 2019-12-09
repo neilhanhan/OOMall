@@ -20,6 +20,7 @@ public class BrandDao {
 
     public Brand updateBrandById(Integer id,Brand brand)
     {
+        brand.setId(id);
         brandMapper.updateBrandById(brand);
         return brandMapper.getBrandById(id);
     }

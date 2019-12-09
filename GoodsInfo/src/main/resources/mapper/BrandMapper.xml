@@ -8,7 +8,6 @@
     <update id="updateBrandById"  parameterType="com.xmu.oomall.domain.Brand" >
         update brand
         <trim prefix="set" suffixOverrides=",">
-            <if test="id!=null">id=#{id},</if>
             <if test="name!=null">name=#{name},</if>
             <if test="description!=null">description=#{description},</if>
             <if test="picUrl!=null">pic_url=#{picUrl},</if>
