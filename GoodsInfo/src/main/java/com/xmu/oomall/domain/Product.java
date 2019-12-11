@@ -1,5 +1,6 @@
 package com.xmu.oomall.domain;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -11,7 +12,7 @@ import java.util.Objects;
  * @Modified By:
  **/
 
-public class Product {
+public class Product  implements Serializable {
 
     private Integer id;
     /**
@@ -37,7 +38,7 @@ public class Product {
     /**
      * 产品安全库存
      */
-    private Integer saftyStock;
+    private Integer safetyStock;
 
     private LocalDateTime gmtCreate;
     private LocalDateTime gmtModified;
@@ -53,7 +54,7 @@ public class Product {
                 ", picUrl='" + picUrl + '\'' +
                 ", specifications='" + specifications + '\'' +
                 ", price=" + price +
-                ", saftyStock=" + saftyStock +
+                ", safetyStock=" + safetyStock +
                 ", gmtCreate=" + gmtCreate +
                 ", gmtModified=" + gmtModified +
                 ", beDeleted=" + beDeleted +
@@ -122,11 +123,11 @@ public class Product {
     }
 
     public Integer getSaftyStock() {
-        return saftyStock;
+        return safetyStock;
     }
 
     public void setSaftyStock(Integer saftyStock) {
-        this.saftyStock = saftyStock;
+        this.safetyStock = saftyStock;
     }
 
 
