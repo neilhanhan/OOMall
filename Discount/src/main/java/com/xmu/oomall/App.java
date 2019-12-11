@@ -1,13 +1,18 @@
 package com.xmu.oomall;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 /**
- * Hello world!
- *
+ *@author Liuwenhan
  */
-public class App 
+@SpringBootApplication
+public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        SpringApplication.run(App.class, args);
     }
 }

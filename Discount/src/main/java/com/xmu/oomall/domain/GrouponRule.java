@@ -1,5 +1,6 @@
 package com.xmu.oomall.domain;
 
+import java.math.BigInteger;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -21,16 +22,16 @@ public class GrouponRule {
      */
     private LocalDateTime endTime;
     /**
-    *判断团购是否还在进行中
-    */
+     *判断团购是否还在进行中
+     */
     private Boolean statusCode;
     /**
-    * 团购等级（满多少人组团多少折扣）
-    */
-    private String grouponLevelStragety;
+     * 团购等级（满多少人组团多少折扣）
+     */
+    private String grouponLevelStrategy;
     /**
-    *团购商品id
-    */
+     *团购商品id
+     */
     private Integer goodsId;
     private LocalDateTime gmtCreate;
     private LocalDateTime gmtModified;
@@ -38,16 +39,16 @@ public class GrouponRule {
 
     @Override
     public String toString() {
-        return "GroupOnRule{" +
+        return "GrouponRule{" +
                 "id=" + id +
-                ", gmtCreate=" + gmtCreate +
-                ", gmtModified=" + gmtModified +
-                ", beDeleted=" + beDeleted +
                 ", startTime=" + startTime +
                 ", endTime=" + endTime +
                 ", statusCode=" + statusCode +
-                ", grouponLevelStragety='" + grouponLevelStragety + '\'' +
+                ", grouponLevelStrategy='" + grouponLevelStrategy + '\'' +
                 ", goodsId=" + goodsId +
+                ", gmtCreate=" + gmtCreate +
+                ", gmtModified=" + gmtModified +
+                ", beDeleted=" + beDeleted +
                 '}';
     }
 
@@ -70,30 +71,6 @@ public class GrouponRule {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public LocalDateTime getGmtCreate() {
-        return gmtCreate;
-    }
-
-    public void setGmtCreate(LocalDateTime gmtCreate) {
-        this.gmtCreate = gmtCreate;
-    }
-
-    public LocalDateTime getGmtModified() {
-        return gmtModified;
-    }
-
-    public void setGmtModified(LocalDateTime gmtModified) {
-        this.gmtModified = gmtModified;
-    }
-
-    public Boolean getBeDeleted() {
-        return beDeleted;
-    }
-
-    public void setBeDeleted(Boolean beDeleted) {
-        this.beDeleted = beDeleted;
     }
 
     public LocalDateTime getStartTime() {
@@ -120,12 +97,12 @@ public class GrouponRule {
         this.statusCode = statusCode;
     }
 
-    public String getGrouponLevelStragety() {
-        return grouponLevelStragety;
+    public String getGrouponLevelStrategy() {
+        return grouponLevelStrategy;
     }
 
-    public void setGrouponLevelStragety(String grouponLevelStragety) {
-        this.grouponLevelStragety = grouponLevelStragety;
+    public void setGrouponLevelStrategy(String grouponLevelStrategy) {
+        this.grouponLevelStrategy = grouponLevelStrategy;
     }
 
     public Integer getGoodsId() {
@@ -134,5 +111,29 @@ public class GrouponRule {
 
     public void setGoodsId(Integer goodsId) {
         this.goodsId = goodsId;
+    }
+
+    public LocalDateTime getGmtCreate() {
+        return gmtCreate;
+    }
+
+    public void setGmtCreate(LocalDateTime gmtCreate) {
+        this.gmtCreate = gmtCreate;
+    }
+
+    public LocalDateTime getGmtModified() {
+        return gmtModified;
+    }
+
+    public void setGmtModified(LocalDateTime gmtModified) {
+        this.gmtModified = gmtModified;
+    }
+
+    public Boolean getBeDeleted() {
+        return beDeleted;
+    }
+
+    public void setBeDeleted(Boolean beDeleted) {
+        this.beDeleted = beDeleted;
     }
 }
