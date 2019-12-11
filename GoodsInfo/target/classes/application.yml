@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/oomall?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: localhost
+    port: 6379
+
+mybatis:
+  #domain对象的包
+  type-aliases-package: com.xmu.oomall.domain
+  #mapper。xml所在的位置
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    #自动将SQL中查出来的带下划线的字段，转换为驼峰标志，再去匹配类中的属性
+    map-underscore-to-camel-case: true
+
+oomall:
+  #最大付款时间, 单位分钟
+  maxpaytime: 30
+  #redis缓存失效时间，单位分钟
+  redisexpiretime: 1
+  #预提库存数量
+  predeductQty: 3

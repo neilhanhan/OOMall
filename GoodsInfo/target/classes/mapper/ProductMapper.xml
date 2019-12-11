@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xmu.oomall.mapper.ProductMapper">
+
+    <select id="findProductById" parameterType="Integer" resultType="Product">
+        select id,product_ids,pic_url,specifications,goods_id,price,safety_stock,gmt_create,gmt_modified,is_deleted from product where id=#{id}
+    </select>
+
+    <select id="findProductsByGoodsId" parameterType="Integer" resultMap="ProductList">
+        select id,product_ids,pic_url,specifications,goods_id,price,safety_stock,gmt_create,gmt_modified,is_deleted from product where goods_id=#{id}
+    </select>
+
+    <resultMap id="ProductList" type="Product">
+        <id column="id" property="id" />
+        <result property="productIds" column="product_ids" />
+        <result property="picUrl" column="pic_url" />
+        <result property="specifications" column="specifications" />
+        <result property="goodsId" column="goods_id" />
+        <result property="price" column="price" />
+        <result property="safetyStock" column="safety_stock" />
+        <result property="gmtCreate" column="gmt_create" />
+        <result property="gmtModified" column="gmt_modified" />
+        <result property="beDeleted" column="is_deleted" />
+    </resultMap>
+
+    <insert id="addProduct" parameterType="Product" useGeneratedKeys="true" keyProperty="id" >
+        insert into product(product_ids,pic_url,specifications,goods_id,price,safety_stock,gmt_create,gmt_modified,is_deleted)
+        value(#{productIds},#{picUrl},#{specifications},#{goodsId},#{price},#{safetyStock},#{gmtCreate},#{gmtModified},#{beDeleted})
+    </insert>
+
+    <update id="updateProduct" parameterType="Product" >
+        update product
+        <trim prefix="set" suffixOverrides=",">
+            <if test="id!=null">id=#{id},</if>
+            <if test="goodsId!=null">product_ids=#{goodsId},</if>
+            <if test="productIds!=null">pic_url=#{productIds},</if>
+            <if test="picUrl!=null">specifications=#{picUrl},</if>
+            <if test="specifications!=null">goods_id=#{specifications},</if>
+            <if test="price!=null">price=#{price},</if>
+            <if test="safetyStock!=null">safety_stock=#{safetyStock},</if>
+            <if test="gmtCreate!=null">gmt_create=#{gmtCreate},</if>
+            <if test="gmtModified!=null">gmt_modified=#{gmtModified},</if>
+            <if test="beDeleted!=null">is_deleted=#{beDeleted},</if>
+        </trim>
+        WHERE id=#{id}
+    </update>
+
+    <delete id="deleteProduct" parameterType="Integer">
+        delete from product where id=#{id}
+    </delete>
+
+</mapper>
