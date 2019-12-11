@@ -83,7 +83,7 @@ public class GoodsCategoryController {
      * @param id 分类类目ID
      * @return 当前分类栏目
      */
-    @GetMapping("categories/l1/{id}/l2/{pid}")
+    @GetMapping("categories/l1/{id}/l2")
     public List<GoodsCategory> listSecondLevelGoodsCategoryById(@PathVariable Integer id)
     {
         return goodsCategoryService.listSecondLevelGoodsCategoryById(id);
