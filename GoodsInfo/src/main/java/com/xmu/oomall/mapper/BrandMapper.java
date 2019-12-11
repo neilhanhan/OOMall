@@ -1,13 +1,14 @@
 package com.xmu.oomall.mapper;
 
 import com.xmu.oomall.domain.Brand;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
+@Mapper
+@Repository
 public interface BrandMapper {
-    //创建一个品牌
-    void createBrand();
-
-    //根据条件搜索品牌
-    void findAllBrand();
 
     /**
      * search brand info by id
@@ -15,21 +16,37 @@ public interface BrandMapper {
      * @param id id
      * @return Brand
      */
-    Brand findBrandById(Integer id);
+    Brand getBrandById(Integer id);
 
     /**
      * update brand by id
      *
-     * @param id id
+     * @param brand
      * @return Brand
      */
-    void updataBrandById(Integer id);
+    Integer updateBrandById(Brand brand);
+
+    /**
+     * create a brand
+     *
+     * @param brand
+     * @return id
+     */
+    void addBrand(Brand brand);
 
     /**
      * delete data by id
      *
      * @param id id
-     * @return Brand
+     * @return
      */
-    Brand deleteBrandById(Integer id);
+    Integer deleteBrandById(Integer id);
+
+    /**
+     * search brands by param
+     *
+     * @param ???
+     * @return List<Brand>
+     */
+    List<Brand> listBrandByCodition();
 }
