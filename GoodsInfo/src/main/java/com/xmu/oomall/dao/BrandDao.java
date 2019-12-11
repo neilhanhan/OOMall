@@ -25,11 +25,10 @@ public class BrandDao {
         return brandMapper.getBrandById(id);
     }
 
-    public Integer addBrand(Brand brand)
+    public Brand addBrand(Brand brand)
     {
         brandMapper.addBrand(brand);
-        int id=brand.getId();
-        return id;
+        return brand;
     }
 
 
@@ -40,8 +39,8 @@ public class BrandDao {
         return brand;
     }
 
-    public List<Brand> listBrandByCodition(String name)
+    public List<Brand> listBrandByCodition()
     {
-        return brandMapper.listBrandByCodition(name);
+        return brandMapper.listBrandByCodition();
     }
 }

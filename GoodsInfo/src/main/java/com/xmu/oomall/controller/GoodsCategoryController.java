@@ -28,7 +28,7 @@ public class GoodsCategoryController {
      * @return
      */
     @PostMapping("/categories")
-    public Integer addGoodsCategory(@RequestBody GoodsCategory goodsCategory)
+    public GoodsCategory addGoodsCategory(@RequestBody GoodsCategory goodsCategory)
     {
         return goodsCategoryService.addGoodsCategory(goodsCategory);
     }
@@ -59,13 +59,33 @@ public class GoodsCategoryController {
     /**
      * 删除单个分类
      * @param id
-     * @param goodsCategory
      * @return
      */
     @DeleteMapping("/categories/{id}")
-    public GoodsCategory deleteGoodsCategory(@PathVariable Integer id)
+    public void deleteGoodsCategory(@PathVariable Integer id)
     {
-        return goodsCategoryService.deleteGoodsCategory(id);
+        goodsCategoryService.deleteGoodsCategory(id);
     }
 
+    /**
+     * 查看所有一级分类
+     * @return
+     */
+    @GetMapping("/categories/l1")
+    public List<GoodsCategory> listOneLevelGoodsCategory()
+    {
+        return goodsCategoryService.listOneLevelGoodsCategory();
+    }
+
+    /**
+     * 获取当前一级分类下的二级分类
+     *
+     * @param id 分类类目ID
+     * @return 当前分类栏目
+     */
+    @GetMapping("categories/l1/{id}/l2/{pid}")
+    public List<GoodsCategory> listSecondLevelGoodsCategoryById(@PathVariable Integer id)
+    {
+        return goodsCategoryService.listSecondLevelGoodsCategoryById(id);
+    }
 }

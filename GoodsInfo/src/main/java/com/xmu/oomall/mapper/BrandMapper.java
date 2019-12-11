@@ -48,5 +48,5 @@ public interface BrandMapper {
      * @param ???
      * @return List<Brand>
      */
-    List<Brand> listBrandByCodition(String name);
+    List<Brand> listBrandByCodition();
 }

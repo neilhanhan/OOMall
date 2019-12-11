@@ -40,8 +40,21 @@ public interface GoodsCategoryMapper {
     /**
      * 删除单个分类
      * @param id
-     * @param goodsCategory
      * @return
      */
     Integer deleteGoodsCategory(Integer id);
+
+    /**
+     * 查看所有一级分类
+     * @return
+     */
+    List<GoodsCategory> listOneLevelGoodsCategory();
+
+    /**
+     * 获取当前一级分类下的二级分类
+     *
+     * @param id 分类类目ID
+     * @return 当前分类栏目
+     */
+    List<GoodsCategory> listSecondLevelGoodsCategoryById(Integer id);
 }

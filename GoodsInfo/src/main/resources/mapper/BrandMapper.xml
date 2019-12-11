@@ -27,6 +27,6 @@
     </delete>
 
     <select id="listBrandByCodition" resultType="com.xmu.oomall.domain.Brand" parameterType="String">
-        select * from brand where name like #{name}
+        select * from brand;
     </select>
 </mapper>

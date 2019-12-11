@@ -17,7 +17,7 @@ public class GoodsCategoryService {
         return goodsCategoryDao.listGoodsCategory();
     }
 
-    public Integer addGoodsCategory(GoodsCategory goodsCategory)
+    public GoodsCategory addGoodsCategory(GoodsCategory goodsCategory)
     {
         return goodsCategoryDao.addGoodsCategory(goodsCategory);
     }
@@ -36,4 +36,8 @@ public class GoodsCategoryService {
     {
         return goodsCategoryDao.deleteGoodsCategory(id);
     }
+
+    public List<GoodsCategory> listOneLevelGoodsCategory(){return goodsCategoryDao.listOneLevelGoodsCategory();}
+
+    public List<GoodsCategory> listSecondLevelGoodsCategoryById(Integer id){return goodsCategoryDao.listSecondLevelGoodsCategoryById(id);}
 }

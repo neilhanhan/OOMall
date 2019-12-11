@@ -23,7 +23,7 @@ public class BrandService {
         return brandDao.updateBrandById(id,brand);
     }
 
-    public Integer addBrand(Brand brand)
+    public Brand addBrand(Brand brand)
     {
         return brandDao.addBrand(brand);
     }
@@ -33,8 +33,8 @@ public class BrandService {
         return brandDao.deleteBrandById(id);
     }
 
-    public List<Brand>listBrandByCodition(String name)
+    public List<Brand>listBrandByCodition()
     {
-        return brandDao.listBrandByCodition(name);
+        return brandDao.listBrandByCodition();
     }
 }

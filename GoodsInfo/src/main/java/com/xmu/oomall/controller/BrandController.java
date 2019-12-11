@@ -10,7 +10,7 @@ import java.util.List;
 import java.time.LocalDateTime;
 
 @RestController
-public class BrandController {
+public class BrandController{
     @Autowired
     private BrandService brandService;
 
@@ -27,7 +27,7 @@ public class BrandController {
     }
 
     @PostMapping("/brands")
-    public Integer addBrand(@RequestBody Brand brand)
+    public Brand addBrand(@RequestBody Brand brand)
     {
         return brandService.addBrand(brand);
     }
@@ -38,9 +38,13 @@ public class BrandController {
         return brandService.deleteBrandById(id);
     }
 
-    @GetMapping("/admins/brands/{name}")
-    public List<Brand> listBrandByCodition(@PathVariable String name)
+    @GetMapping("/admins/brands")
+    public List<Brand> listBrandByCodition(@RequestParam String id,
+                                           @RequestParam String name,
+                                           @RequestParam Integer page,
+                                           @RequestParam Integer limit
+                                           )
     {
-        return brandService.listBrandByCodition(name);
+        return brandService.listBrandByCodition();
     }
 }

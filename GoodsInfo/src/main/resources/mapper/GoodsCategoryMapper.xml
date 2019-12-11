@@ -6,8 +6,8 @@
     </select>
 
     <insert id="addGoodsCategory" parameterType="com.xmu.oomall.domain.GoodsCategory" useGeneratedKeys="true" keyProperty="id">
-        insert into goods_category(name,pid,gmt_create,gmt_modified,is_deleted)
-        values (#{name},#{pid},#{gmtCreate},#{gmtModified},#{beDeleted});
+        insert into goods_category(name,pid,pic_url,gmt_create,gmt_modified,is_deleted)
+        values (#{name},#{pid},#{picUrl},#{gmtCreate},#{gmtModified},#{beDeleted});
     </insert>
     
     <select id="getGoodsCategoryById" parameterType="Integer" resultType="com.xmu.oomall.domain.GoodsCategory">
@@ -19,6 +19,7 @@
         <trim prefix="set" suffixOverrides=",">
             <if test="name!=null">name=#{name},</if>
             <if test="pid!=null">pid=#{pid},</if>
+            <if test="picUrl!=null">pic_url=#{picUrl}</if>
             <if test="gmtCreate!=null">gmt_create=#{gmtCreate},</if>
             <if test="gmtModified!=null">gmt_modified=#{gmtModified},</if>
             <if test="beDeleted!=null">is_deleted=#{beDeleted}</if>
@@ -29,4 +30,12 @@
     <delete id="deleteGoodsCategory" parameterType="Integer">
         delete from goods_category where id =#{id};
     </delete>
+
+    <select id="listOneLevelGoodsCategory" resultType="com.xmu.oomall.domain.GoodsCategory">
+        select * from goods_category where pid=1;
+    </select>
+    
+    <select id="listSecondLevelGoodsCategoryById" resultType="com.xmu.oomall.domain.GoodsCategory" parameterType="Integer">
+        select * from goods_category where pid=#{id};
+    </select>
 </mapper>

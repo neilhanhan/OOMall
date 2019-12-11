@@ -17,11 +17,10 @@ public class GoodsCategoryDao {
         return goodsCategoryMapper.listGoodsCategory();
     }
 
-    public Integer addGoodsCategory(GoodsCategory goodsCategory)
+    public GoodsCategory addGoodsCategory(GoodsCategory goodsCategory)
     {
         goodsCategoryMapper.addGoodsCategory(goodsCategory);
-        int id=goodsCategory.getId();
-        return id;
+        return goodsCategory;
     }
 
     public GoodsCategory getGoodsCategoryById(Integer id)
@@ -41,5 +40,15 @@ public class GoodsCategoryDao {
         GoodsCategory goodsCategory=goodsCategoryMapper.getGoodsCategoryById(id);
         goodsCategoryMapper.deleteGoodsCategory(id);
         return goodsCategory;
+    }
+
+    public List<GoodsCategory> listOneLevelGoodsCategory()
+    {
+        return goodsCategoryMapper.listOneLevelGoodsCategory();
+    }
+
+    public List<GoodsCategory> listSecondLevelGoodsCategoryById(Integer id)
+    {
+        return goodsCategoryMapper.listSecondLevelGoodsCategoryById(id);
     }
 }
