@@ -49,4 +49,6 @@ public interface BrandMapper {
      * @return List<Brand>
      */
     List<Brand> listBrandByCodition();
+
+    List<Brand> listBrand();
 }

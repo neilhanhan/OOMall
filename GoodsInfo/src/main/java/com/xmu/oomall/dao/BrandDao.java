@@ -39,8 +39,34 @@ public class BrandDao {
         return brand;
     }
 
-    public List<Brand> listBrandByCodition()
+    public List<Brand> listBrandByCodition(Integer page,Integer limit)
     {
-        return brandMapper.listBrandByCodition();
+        List<Brand> brandList=brandMapper.listBrandByCodition();
+        int pagecount=brandList.size()/limit;
+        int remain=brandList.size()%limit;
+        if(remain>0){
+            pagecount++;
+        }
+        if(page>pagecount) {
+            return null;
+        }
+        List<Brand> subBrandList=null;
+        if(remain==0) {
+            subBrandList=brandList.subList((page-1)*limit,page*limit);
+        }
+        else{
+            if (page==pagecount){
+                subBrandList=brandList.subList((page-1)*limit,brandList.size());
+            }else{
+                subBrandList=brandList.subList((page-1)*limit,page*limit);
+            }
+        }
+
+        return subBrandList;
+    }
+
+    public List<Brand> listBrand()
+    {
+        return brandMapper.listBrand();
     }
 }

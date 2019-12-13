@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/GoodsInfo/src/main/resources/mapper/BrandMapper.xml" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/GoodsInfo/src/main/resources/mapper/GoodsCategoryMapper.xml" dialect="MySQL" />
+  </component>
+  <component name="SqlResolveMappings">
+    <file url="file://$PROJECT_DIR$/GoodsInfo/src/main/resources/mapper/BrandMapper.xml" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;name&quot;:{     &quot;@qname&quot;:&quot;f1925196-b191-4003-a01a-26ae76aa1d5f&quot;    },    &quot;group&quot;:{     &quot;@kind&quot;:&quot;schema&quot;,     &quot;node&quot;:{      &quot;name&quot;:{       &quot;@qname&quot;:&quot;oomall&quot;      }     }    }   }  } }}" />
+    <file url="file://$PROJECT_DIR$/GoodsInfo/src/main/resources/mapper/GoodsCategoryMapper.xml" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;name&quot;:{     &quot;@qname&quot;:&quot;f1925196-b191-4003-a01a-26ae76aa1d5f&quot;    },    &quot;group&quot;:{     &quot;@kind&quot;:&quot;schema&quot;,     &quot;node&quot;:{      &quot;name&quot;:{       &quot;@qname&quot;:&quot;oomall&quot;      }     }    }   }  } }}" />
+  </component>
+</project>

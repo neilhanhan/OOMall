@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xmu.oomall.mapper.BrandMapper">
     <select id="getBrandById" resultType="com.xmu.oomall.domain.Brand" parameterType="Integer">
-        select * from brand where id =#{id};
+        select * from brand where id =#{id} and is_deleted!=true;
     </select>
 
     <update id="updateBrandById"  parameterType="com.xmu.oomall.domain.Brand" >
@@ -15,7 +15,7 @@
             <if test="gmtModified!=null">gmt_modified=#{gmtModified},</if>
             <if test="beDeleted!=null">is_deleted=#{beDeleted}</if>
         </trim>
-        where id=#{id};
+        where id=#{id} and is_deleted!=true;
     </update>
 
     <insert id="addBrand" parameterType="com.xmu.oomall.domain.Brand" useGeneratedKeys="true" keyProperty="id">
@@ -23,10 +23,14 @@
     </insert>
 
     <delete id="deleteBrandById" parameterType="Integer">
-        delete from brand where id =#{id};
+        update brand set is_deleted=true where id =#{id} and is_deleted!=true;
     </delete>
 
     <select id="listBrandByCodition" resultType="com.xmu.oomall.domain.Brand" parameterType="String">
-        select * from brand;
+        select * from brand where is_deleted!=true;
+    </select>
+
+    <select id="listBrand" resultType="com.xmu.oomall.domain.Brand">
+        select * from brand where is_deleted!=true;
     </select>
 </mapper>
