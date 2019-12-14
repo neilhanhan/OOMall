@@ -35,9 +35,9 @@ public class GoodsController {
     }
 
     @PostMapping("/goods/{id}/products")
-    public GoodsPo addProduct(@PathVariable("id")Integer id,@RequestBody ProductPo productPo){
+    public ProductPo addProduct(@PathVariable("id")Integer id,@RequestBody ProductPo productPo){
         productService.addProduct(id,productPo);
-        return productService.findProductById(id).getGoodsPo();
+        return productService.findProductById(id);
     }
 
     @PutMapping("/products/{id}")

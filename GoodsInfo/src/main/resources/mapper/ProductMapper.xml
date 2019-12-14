@@ -3,16 +3,15 @@
 <mapper namespace="com.xmu.oomall.mapper.ProductMapper">
 
     <select id="findProductById" parameterType="Integer" resultType="Product">
-        select id,product_ids,pic_url,specifications,goods_id,price,safety_stock,gmt_create,gmt_modified,is_deleted from product where id=#{id}
+        select id,pic_url,specifications,goods_id,price,safety_stock,gmt_create,gmt_modified,is_deleted from oomall_product where id=#{id}
     </select>
 
     <select id="findProductsByGoodsId" parameterType="Integer" resultMap="ProductPoList">
-        select id,product_ids,pic_url,specifications,goods_id,price,safety_stock,gmt_create,gmt_modified,is_deleted from product where goods_id=#{id}
+        select id,pic_url,specifications,goods_id,price,safety_stock,gmt_create,gmt_modified,is_deleted from oomall_product where goods_id=#{id}
     </select>
 
     <resultMap id="ProductPoList" type="ProductPo">
         <id column="id" property="id" />
-        <result property="productIds" column="product_ids" />
         <result property="picUrl" column="pic_url" />
         <result property="specifications" column="specifications" />
         <result property="goodsId" column="goods_id" />
@@ -24,16 +23,15 @@
     </resultMap>
 
     <insert id="addProduct" parameterType="ProductPo" useGeneratedKeys="true" keyProperty="id" >
-        insert into product(product_ids,pic_url,specifications,goods_id,price,safety_stock,gmt_create,gmt_modified,is_deleted)
-        value(#{productIds},#{picUrl},#{specifications},#{goodsId},#{price},#{safetyStock},#{gmtCreate},#{gmtModified},#{beDeleted})
+        insert into oomall_product(pic_url,specifications,goods_id,price,safety_stock,gmt_create,gmt_modified,is_deleted)
+        value(#{picUrl},#{specifications},#{goodsId},#{price},#{safetyStock},#{gmtCreate},#{gmtModified},#{beDeleted})
     </insert>
 
     <update id="updateProduct" parameterType="ProductPo" >
-        update product
+        update oomall_product
         <trim prefix="set" suffixOverrides=",">
             <if test="id!=null">id=#{id},</if>
             <if test="goodsId!=null">product_ids=#{goodsId},</if>
-            <if test="productIds!=null">pic_url=#{productIds},</if>
             <if test="picUrl!=null">specifications=#{picUrl},</if>
             <if test="specifications!=null">goods_id=#{specifications},</if>
             <if test="price!=null">price=#{price},</if>
@@ -46,7 +44,7 @@
     </update>
 
     <update id="deleteProduct" parameterType="Integer">
-        update product set is_deleted = 1 where id=#{id}
+        update oomall_product set is_deleted = 1 where id=#{id}
     </update>
 
 </mapper>

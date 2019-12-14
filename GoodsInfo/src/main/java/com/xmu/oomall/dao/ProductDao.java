@@ -1,7 +1,9 @@
 package com.xmu.oomall.dao;
 
+import com.xmu.oomall.domain.Goods;
 import com.xmu.oomall.domain.Product;
 import com.xmu.oomall.domain.ProductPo;
+import com.xmu.oomall.mapper.GoodsMapper;
 import com.xmu.oomall.mapper.ProductMapper;
 import com.xmu.oomall.service.ProductService;
 import com.xmu.oomall.util.Config;
@@ -21,6 +23,8 @@ public class ProductDao {
     @Autowired
     private ProductMapper productMapper;
     @Autowired
+    private GoodsMapper goodsMapper;
+    @Autowired
     private RedisTemplate redisTemplate;
     @Autowired
     private Config config;
@@ -38,11 +42,12 @@ public class ProductDao {
         if (product == null) {
             logger.debug("Redis中无product对象" + key);
             product = productMapper.findProductById(id);
+        //    product.setGoodsPo(goodsMapper.findGoodsById(product.getGoodsId()));
             redisTemplate.opsForValue().set(key, product, config.getRedisExpireTime(), TimeUnit.MINUTES);
-            logger.debug("Redis中存入 product = " + product);
+            logger.debug("Redis中存入product = " + product);
         }
         return product;
-//        return productMapper.findProductById(id);
+//      return productMapper.findProductById(id);
     }
 
     /**
@@ -87,7 +92,7 @@ public class ProductDao {
         productPo.setId(id);
         productPo.setGmtModified(LocalDateTime.now());
         productMapper.updateProduct(productPo);
-        return findProductById(productPo.getId());
+        return productMapper.findProductById(productPo.getId());
     }
 
     /**
@@ -97,6 +102,8 @@ public class ProductDao {
      * @return
      */
     public Integer deleteProduct(Integer id) {
+
+
         return productMapper.deleteProduct(id);
     }
 }
