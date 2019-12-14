@@ -1,6 +1,7 @@
     package com.xmu.oomall.mapper;
 
 import com.xmu.oomall.domain.Product;
+import com.xmu.oomall.domain.ProductPo;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -21,21 +22,21 @@ public interface ProductMapper {
      * @param id 商品id
      * @return 产品列表
      */
-    List<Product> findProductsByGoodsId(Integer id);
+    List<ProductPo> findProductsByGoodsId(Integer id);
 
     /**
      * 添加产品
-     * @param product 产品
+     * @param productPo 产品
      * @return 产品
      */
-    Integer addProduct(Product product);
+    List<ProductPo> addProduct(ProductPo productPo);
 
     /**
      * 修改产品信息
-     * @param product 产品
+     * @param productPo 产品
      * @return 产品
      */
-    Integer updateProduct(Product product);
+    ProductPo updateProduct(ProductPo productPo);
 
     /**
      * 删除产品

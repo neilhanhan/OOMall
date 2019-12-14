@@ -2,6 +2,7 @@ package com.xmu.oomall.service;
 
 import com.xmu.oomall.dao.ProductDao;
 import com.xmu.oomall.domain.Product;
+import com.xmu.oomall.domain.ProductPo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,16 +17,16 @@ public class ProductService {
         return productDao.findProductById(id);
     }
 
-    public List<Product> findProductsByGoodsId(Integer id) {
+    public List<ProductPo> findProductsByGoodsId(Integer id) {
         return productDao.findProductsByGoodsId(id);
     }
 
-    public Integer addProduct(Integer id,Product product) {
-        return productDao.addProduct(id,product);
+    public List<ProductPo> addProduct(Integer id,ProductPo productPo) {
+        return productDao.addProduct(id,productPo);
     }
 
-    public Integer updateProduct(Integer id,Product product) {
-        return productDao.updateProduct(id,product);
+    public ProductPo updateProduct(Integer id,ProductPo productPo) {
+        return productDao.updateProduct(id,productPo);
     }
 
     public Integer deleteProduct(Integer id ) {

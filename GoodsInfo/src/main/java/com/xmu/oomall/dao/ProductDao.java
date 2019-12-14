@@ -1,6 +1,7 @@
 package com.xmu.oomall.dao;
 
 import com.xmu.oomall.domain.Product;
+import com.xmu.oomall.domain.ProductPo;
 import com.xmu.oomall.mapper.ProductMapper;
 import com.xmu.oomall.service.ProductService;
 import com.xmu.oomall.util.Config;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 @Repository
@@ -49,9 +51,9 @@ public class ProductDao {
      * @param id 商品id
      * @return 产品列表
      */
-    public List<Product> findProductsByGoodsId(Integer id) {
+    public List<ProductPo> findProductsByGoodsId(Integer id) {
         String key = "PofG_" + id;
-        List<Product> products = (List<Product>) redisTemplate.opsForValue().get(key);
+        List<ProductPo> products = (List<ProductPo>) redisTemplate.opsForValue().get(key);
         if (products == null) {
             logger.debug("Redis中无products对象" + key);
             products = productMapper.findProductsByGoodsId(id);
@@ -65,23 +67,27 @@ public class ProductDao {
     /**
      *
      * @param id 商品id
-     * @param product 产品
+     * @param productPo 产品
      * @return
      */
-    public Integer addProduct(Integer id,Product product) {
-        product.setGoodsId(id);
-        return productMapper.addProduct(product);
+    public List<ProductPo> addProduct(Integer id,ProductPo productPo) {
+        productPo.setGoodsId(id);
+        productPo.setGmtCreate(LocalDateTime.now());
+        productPo.setGmtModified(LocalDateTime.now());
+        return productMapper.addProduct(productPo);
     }
 
     /**
      * 修改产品信息
      *
-     * @param product 产品
+     * @param productPo 产品
      * @return
      */
-    public Integer updateProduct(Integer id,Product product) {
-        product.setId(id);
-        return productMapper.updateProduct(product);
+    public ProductPo updateProduct(Integer id,ProductPo productPo) {
+        productPo.setId(id);
+        productPo.setGmtModified(LocalDateTime.now());
+        productMapper.updateProduct(productPo);
+        return findProductById(productPo.getId());
     }
 
     /**

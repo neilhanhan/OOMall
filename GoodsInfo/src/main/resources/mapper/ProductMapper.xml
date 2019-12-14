@@ -6,11 +6,11 @@
         select id,product_ids,pic_url,specifications,goods_id,price,safety_stock,gmt_create,gmt_modified,is_deleted from product where id=#{id}
     </select>
 
-    <select id="findProductsByGoodsId" parameterType="Integer" resultMap="ProductList">
+    <select id="findProductsByGoodsId" parameterType="Integer" resultMap="ProductPoList">
         select id,product_ids,pic_url,specifications,goods_id,price,safety_stock,gmt_create,gmt_modified,is_deleted from product where goods_id=#{id}
     </select>
 
-    <resultMap id="ProductList" type="Product">
+    <resultMap id="ProductPoList" type="ProductPo">
         <id column="id" property="id" />
         <result property="productIds" column="product_ids" />
         <result property="picUrl" column="pic_url" />
@@ -23,12 +23,12 @@
         <result property="beDeleted" column="is_deleted" />
     </resultMap>
 
-    <insert id="addProduct" parameterType="Product" useGeneratedKeys="true" keyProperty="id" >
+    <insert id="addProduct" parameterType="ProductPo" useGeneratedKeys="true" keyProperty="id" >
         insert into product(product_ids,pic_url,specifications,goods_id,price,safety_stock,gmt_create,gmt_modified,is_deleted)
         value(#{productIds},#{picUrl},#{specifications},#{goodsId},#{price},#{safetyStock},#{gmtCreate},#{gmtModified},#{beDeleted})
     </insert>
 
-    <update id="updateProduct" parameterType="Product" >
+    <update id="updateProduct" parameterType="ProductPo" >
         update product
         <trim prefix="set" suffixOverrides=",">
             <if test="id!=null">id=#{id},</if>
@@ -42,11 +42,11 @@
             <if test="gmtModified!=null">gmt_modified=#{gmtModified},</if>
             <if test="beDeleted!=null">is_deleted=#{beDeleted},</if>
         </trim>
-        WHERE id=#{id}
+        WHERE id=#{id} and is_deleted &lt;&gt; 1
     </update>
 
-    <delete id="deleteProduct" parameterType="Integer">
-        delete from product where id=#{id}
-    </delete>
+    <update id="deleteProduct" parameterType="Integer">
+        update product set is_deleted = 1 where id=#{id}
+    </update>
 
 </mapper>

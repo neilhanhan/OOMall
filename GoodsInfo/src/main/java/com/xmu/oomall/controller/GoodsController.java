@@ -1,10 +1,7 @@
 package com.xmu.oomall.controller;
 
-import com.xmu.oomall.domain.Brand;
-import com.xmu.oomall.domain.Goods;
-import com.xmu.oomall.domain.GoodsCategory;
+import com.xmu.oomall.domain.*;
 import com.xmu.oomall.service.BrandService;
-import com.xmu.oomall.domain.Product;
 import com.xmu.oomall.service.GoodsService;
 import com.xmu.oomall.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +25,7 @@ public class GoodsController {
     public Goods findGoodsById(@PathVariable("id")Integer id){return goodsService.findGoodsById(id);}
 
     @GetMapping("/goods/{id}/products")
-    public List<Product> findProductsByGoodsId(@PathVariable("id")Integer id){
+    public List<ProductPo> findProductsByGoodsId(@PathVariable("id")Integer id){
         return productService.findProductsByGoodsId(id);
     }
 
@@ -38,16 +35,17 @@ public class GoodsController {
     }
 
     @PostMapping("/goods/{id}/products")
-    public Integer addProduct(@PathVariable("id")Integer id,@RequestBody Product product){
-        return productService.addProduct(id,product);
+    public GoodsPo addProduct(@PathVariable("id")Integer id,@RequestBody ProductPo productPo){
+        productService.addProduct(id,productPo);
+        return productService.findProductById(id).getGoodsPo();
     }
 
-    @PutMapping("/goods/{goodsid}/products/{id}")
-    public Integer updateProduct(@PathVariable("id")Integer id,@RequestBody Product product){
-        return productService.updateProduct(id,product);
+    @PutMapping("/products/{id}")
+    public ProductPo updateProduct(@PathVariable("id")Integer id,@RequestBody ProductPo productPo){
+        return productService.updateProduct(id,productPo);
     }
 
-    @DeleteMapping("/goods/{goodsid}/products/{id}")
+    @DeleteMapping("/products/{id}")
     public Integer deleteProduct(@PathVariable("id")Integer id){
         return productService.deleteProduct(id);
     }
