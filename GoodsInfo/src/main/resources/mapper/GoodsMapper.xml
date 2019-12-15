@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xmu.oomall.mapper.GoodsMapper">
+    <select id="getGoodsById" parameterType="Integer" resultType="Goods">
+            select *
+            from goods where id = #{id} and is_deleted=0
+    </select>
+    <select id="getGoodsPoById" parameterType="Integer" resultType="GoodsPo">
+            select *
+            from goods where id = #{id} and is_deleted=0
+    </select>
+       <delete id="deleteGoodsById" parameterType="Integer">
+        update goods
+        set is_deleted=1
+        where id=#{id}
+    </delete>
+       <update id="updateGoodsById" parameterType="GoodsPo">
+              update goods
+              <trim prefix="set" suffixOverrides=",">
+                     <if test="name!=null">name=#{name},</if>
+                     <if test="goodsSn!=null">goods_sn=#{goodsSn},</if>
+                     <if test="shortName!=null">short_name=#{shortName},</if>
+                     <if test="description!=null">description=#{description},</if>
+                     <if test="brief!=null">brief=#{brief},</if>
+                     <if test="picUrl!=null">pic_url=#{picUrl},</if>
+                     <if test="detail!=null">detail=#{detail},</if>
+                     <if test="statusCode!=null">status=#{statusCode},</if>
+                     <if test="shareUrl!=null">share_url=#{shareUrl},</if>
+                     <if test="gallery!=null">gallery=#{gallery},</if>
+                     <if test="goodsCategoryId!=null">goods_category_id=#{goodsCategoryId},</if>
+                     <if test="brandId!=null">brand_id=#{brandId},</if>
+                     <if test="weight!=null">weight=#{weight},</if>
+                     <if test="volume!=null">volume=#{volume},</if>
+                     <if test="specialFreightId!=null">special_freight_id=#{specialFreightId},</if>
+                     <if test="beSpecial!=null">is_special=#{beSpecial},</if>
+                     <if test="price!=null">price=#{price},</if>
+                     <if test="beDeleted!=null">is_deleted=#{beDeleted},</if>
+                     <if test="gmtCreate!=null">gmt_created=#{gmtCreate},</if>
+                     <if test="gmtModified!=null">gmt_modified=#{gmtModified},</if>
+              </trim>
+              WHERE id=#{id}
+       </update>
+       <insert id="addGoods" parameterType="GoodsPo" useGeneratedKeys="true" keyProperty="id">
+        insert into goods(name,goods_sn,short_name,description,brief,pic_url,detail,status,share_url,gallery,goods_category_id,brand_id,weight,volume,special_freight_id,is_special,price,is_deleted,gmt_create,gmt_modified)
+        values (#{name},#{goodsSn},#{shortName},#{description},#{brief},#{picUrl},#{detail}, #{statusCode}, #{shareUrl}, #{gallery},#{goodsCategoryId},#{brandId},#{weight},#{volume},#{specialFreightId},#{beSpecial},#{price},#{beDeleted},#{gmtCreate},#{gmtModified})
+    </insert>
+        <select id="getGoodsByCategoryId" resultType="GoodsPo" parameterType="Integer">
+        select * from goods where goods_category_id=#{id} and is_deleted=0
+    </select>
+
+</mapper>
