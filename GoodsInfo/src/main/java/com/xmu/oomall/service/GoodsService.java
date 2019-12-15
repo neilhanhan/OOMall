@@ -1,5 +1,6 @@
 package com.xmu.oomall.service;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.xmu.oomall.dao.GoodsDao;
 import com.xmu.oomall.domain.Goods;
 import com.xmu.oomall.domain.GoodsPo;
@@ -24,4 +25,8 @@ public class GoodsService {
     public GoodsPo addGoods(GoodsPo goodsPo){return goodsDao.addGoods(goodsPo);}
 
     public List<GoodsPo> getGoodsByCategoryId(Integer id,Integer page,Integer limit){return goodsDao.getGoodsByCategoryId(id,page,limit);}
+
+    public Boolean isOnSale(Integer id){return goodsDao.isOnSale(id);}
+
+    public Goods getGoodsByIdForAdmin(Integer id){return goodsDao.findGoodByIdForAdmin(id);}
 }

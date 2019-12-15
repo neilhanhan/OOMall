@@ -18,11 +18,21 @@ public class GoodsDao {
     private GoodsMapper goodsMapper;
 
     public Goods findGoodsById(Integer id){
+        Goods goods=goodsMapper.getGoodsById(id);
+        if(goods.getStatusCode()!=0){
+            return goods;
+        }
+        return null;
+    }
+
+    public Goods findGoodByIdForAdmin(Integer id){
         return goodsMapper.getGoodsById(id);
     }
 
     public Integer deleteGoodsById(Integer id){
-
+        GoodsPo goodsPo=goodsMapper.getGoodsPoById(id);
+        goodsPo.setGmtModified(LocalDateTime.now());
+        goodsMapper.updateGoodsById(goodsPo);
         return goodsMapper.deleteGoodsById(id);
     }
 
@@ -44,5 +54,12 @@ public class GoodsDao {
         PageHelper.startPage(page,limit);
         List<GoodsPo> goodsPoList=goodsMapper.getGoodsByCategoryId(id);
         return goodsPoList;
+    }
+
+    public Boolean isOnSale(Integer id){
+        Goods goods=goodsMapper.getGoodsById(id);
+        if(goods.getStatusCode()!=0){
+            return true;}
+        return false;
     }
 }

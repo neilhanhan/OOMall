@@ -59,4 +59,11 @@ public class GoodsController {
     public Integer deleteProduct(@PathVariable("id")Integer id){
         return productService.deleteProduct(id);
     }
+
+    @GetMapping("/goods{id}/isOnSale")
+    public Boolean isOnSale(@PathVariable("id")Integer id){return goodsService.isOnSale(id);}
+
+    @GetMapping("/admin/goods/{id}")
+    public Goods getGoodsByIdForAdmin(@PathVariable("id")Integer id){return goodsService.getGoodsByIdForAdmin(id);}
+
 }

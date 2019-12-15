@@ -1,5 +1,6 @@
 package com.xmu.oomall.mapper;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.xmu.oomall.domain.Goods;
 import com.xmu.oomall.domain.GoodsPo;
 import org.apache.ibatis.annotations.Mapper;
@@ -51,6 +52,8 @@ public interface GoodsMapper {
      * @return
      */
     List<GoodsPo> getGoodsByCategoryId(Integer id);
+
+
 
 
 }
