@@ -16,13 +16,23 @@ public class GoodsController {
     @Autowired
     private BrandService brandService;
 
-
-
     @Autowired
     private ProductService productService;
 
     @GetMapping("/goods/{id}")
-    public Goods findGoodsById(@PathVariable("id")Integer id){return goodsService.findGoodsById(id);}
+    public Goods findGoodsById(@PathVariable("id")Integer id){return goodsService.getGoodsById(id);}
+
+    @DeleteMapping("/goods/{id}")
+    public Integer deleteGoodsById(@PathVariable("id")Integer id){return goodsService.deleteGoodsById(id);}
+
+    @GetMapping("/categories/{id}/goods")
+    public List<GoodsPo> getGoodsByCategoryId(@PathVariable("id")Integer id,@RequestParam Integer page,@RequestParam Integer limit){return goodsService.getGoodsByCategoryId(id,page,limit);}
+
+    @PostMapping("/goods")
+    public GoodsPo addGoods(@RequestBody GoodsPo goodsPo){return goodsService.addGoods(goodsPo);}
+
+    @PutMapping("/goods/{id}")
+    public GoodsPo updateGoods(@PathVariable("id")Integer id,@RequestBody GoodsPo goodsPo){return goodsService.updateGoodsById(id,goodsPo);}
 
     @GetMapping("/goods/{id}/products")
     public List<ProductPo> findProductsByGoodsId(@PathVariable("id")Integer id){
