@@ -140,12 +140,10 @@
     <orderEntry type="library" scope="TEST" name="Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:5.2.0.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.6.3" level="project" />
-    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.8" level="project" />
-    <orderEntry type="library" name="Maven: com.github.pagehelper:pagehelper-spring-boot-starter:1.2.5" level="project" />
-    <orderEntry type="library" name="Maven: com.github.pagehelper:pagehelper-spring-boot-autoconfigure:1.2.5" level="project" />
-    <orderEntry type="library" name="Maven: com.github.pagehelper:pagehelper:5.1.4" level="project" />
-    <orderEntry type="library" name="Maven: com.github.jsqlparser:jsqlparser:1.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.18.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.github.kstyrc:embedded-redis:0.6" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: commons-io:commons-io:2.4" level="project" />
+    <orderEntry type="library" name="Maven: com.github.pagehelper:pagehelper:5.1.4" level="project" />
+    <orderEntry type="library" name="Maven: com.github.jsqlparser:jsqlparser:1.0" level="project" />
   </component>
 </module>

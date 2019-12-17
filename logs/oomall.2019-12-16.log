@@ -1,0 +1,28 @@
+2019-12-16 23:52:01.400 [main] INFO  com.xmu.oomall.OomallApplication - Starting OomallApplication on LAPTOP-O7RFFOA8 with PID 19576 (C:\Users\97392\IdeaProjects\oomall\GoodsInfo\target\classes started by 97392 in C:\Users\97392\IdeaProjects\oomall)
+2019-12-16 23:52:01.403 [main] INFO  com.xmu.oomall.OomallApplication - No active profile set, falling back to default profiles: default
+2019-12-16 23:52:03.276 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-16 23:52:03.283 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-16 23:52:03.359 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32ms. Found 0 repository interfaces.
+2019-12-16 23:52:03.798 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-16 23:52:04.407 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-12-16 23:52:04.431 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-16 23:52:04.432 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-12-16 23:52:04.432 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-16 23:52:04.450 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2019-12-16 23:52:04.450 [main] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-12-16 23:52:04.450 [main] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-12-16 23:52:04.507 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2019-12-16 23:52:04.715 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-16 23:52:04.716 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3222 ms
+2019-12-16 23:52:06.619 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-16 23:52:07.316 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-16 23:52:07.385 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-12-16 23:52:07.416 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-16 23:52:07.418 [main] INFO  com.xmu.oomall.OomallApplication - Started OomallApplication in 7.032 seconds (JVM running for 8.587)
+2019-12-16 23:52:08.008 [RMI TCP Connection(3)-192.168.199.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-16 23:52:08.009 [RMI TCP Connection(3)-192.168.199.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-12-16 23:52:08.017 [RMI TCP Connection(3)-192.168.199.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2019-12-16 23:52:08.626 [RMI TCP Connection(5)-192.168.199.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-12-16 23:52:10.870 [RMI TCP Connection(5)-192.168.199.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-12-16 23:52:11.544 [RMI TCP Connection(5)-192.168.199.1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-12-16 23:52:11.550 [RMI TCP Connection(5)-192.168.199.1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library

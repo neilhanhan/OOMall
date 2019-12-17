@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xmu.oomall.mapper.GoodsCategoryMapper">
+    <select id="getAllCategories" resultType="com.xmu.oomall.domain.GoodsCategoryPo">
+        select * from oomall_goods_category where is_deleted!=true;
+    </select>
+
+    <insert id="addCategory" parameterType="com.xmu.oomall.domain.GoodsCategoryPo" useGeneratedKeys="true" keyProperty="id">
+        insert into oomall_goods_category(name, pid , pic_url, gmt_create, gmt_modified, is_deleted)
+        VALUES(#{name},#{pid},#{picUrl},#{gmtCreate},#{gmtModified},#{beDeleted})
+    </insert>
+
+    <select id="getCategoryById" parameterType="Integer" resultType="com.xmu.oomall.domain.GoodsCategoryPo">
+        select * from oomall_goods_category where id=#{id} and is_deleted!=true;
+    </select>
+
+    <update id="updateCategory" parameterType="com.xmu.oomall.domain.GoodsCategoryPo">
+        update oomall_goods_category
+        <trim prefix="set" suffixOverrides=",">
+            <if test="name!=null">name=#{name},</if>
+            <if test="pid">pid=#{pid},</if>
+            <if test="picUrl">pic_url=#{picUrl},</if>
+            <if test="gmtModified!=null">gmt_modified=#{gmtModified},</if>
+        </trim>
+        where id=#{id} and is_deleted!=true;
+    </update>
+
+    <update id="deleteCategory" parameterType="Integer">
+        update oomall_goods_category set is_deleted=true where id=#{id} and is_deleted!=true;
+    </update>
+
+    <select id="getLevelOneCategories" resultType="com.xmu.oomall.domain.GoodsCategoryPo">
+        select * from oomall_goods_category where pid=null and is_deleted!=true;
+    </select>
+    
+    <select id="getLevelTwoCategories" resultType="com.xmu.oomall.domain.GoodsCategoryPo" parameterType="Integer">
+        select * from oomall_goods_category where pid=#{id} and is_deleted!=true;
+    </select>
+</mapper>
