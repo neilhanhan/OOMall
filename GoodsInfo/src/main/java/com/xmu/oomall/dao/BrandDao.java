@@ -47,7 +47,8 @@ public class BrandDao{
                 subList=brandList.subList((page-1)*limit,page*limit);
             }
         }
-        return subList;
+        return ResponseUtil.ok(subList);
+
     }
 
     public Object addBrand(BrandPo brandPo) {
@@ -58,7 +59,7 @@ public class BrandDao{
         int success=brandMapper.addBrand(brandPo);
         if(success!=0)
         {
-            return brandPo;
+            return ResponseUtil.ok(brandPo);
         }
         else {
             return ResponseUtil.fail(505,"新建数据项失败");
@@ -79,7 +80,7 @@ public class BrandDao{
 //            logger.debug("Redis中存入 goods = "+goods);
         }
 
-        return brandPo;
+        return ResponseUtil.ok(brandPo);
     }
 
     public Object updateBrand(Integer id, BrandPo brandPo) {
@@ -90,7 +91,7 @@ public class BrandDao{
         {
             return ResponseUtil.fail(402,"数据库中无此id或品牌已被删除");
         }
-        return brandMapper.getBrandById(id);
+        return ResponseUtil.ok(brandMapper.getBrandById(id));
     }
 
     public Object deleteBrand(Integer id) {
@@ -99,7 +100,7 @@ public class BrandDao{
         {
             return ResponseUtil.fail(402,"数据库中无此id或品牌已被删除");
         }
-        return null;
+        return ResponseUtil.ok();
     }
 
     public Object uploadPic(MultipartFile pic) {
@@ -116,7 +117,7 @@ public class BrandDao{
         }else{
             return ResponseUtil.fail(505,"图片上传失败");
         }
-        return warning;
+        return ResponseUtil.ok(warning);
 
     }
 }
