@@ -53,7 +53,19 @@ public interface GoodsMapper {
      */
     List<GoodsPo> getGoodsByCategoryId(Integer id);
 
+    /**
+     * 根据商品名称查询商品
+     * @param name
+     * @return
+     */
+    List<GoodsPo> getGoodsByName(String name);
 
+    /**
+     * 管理员根据商品名称查询商品
+     * @param name
+     * @return
+     */
+    List<GoodsPo> getGoodsByNameForAdmin(String name);
 
 
 }

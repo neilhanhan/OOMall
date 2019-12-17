@@ -62,4 +62,16 @@ public class GoodsDao {
             return true;}
         return false;
     }
+
+    public List<GoodsPo> getGoodsByName(Integer page,Integer limit,String name){
+        PageHelper.startPage(page,limit);
+        List<GoodsPo> goodsPoList=goodsMapper.getGoodsByName(name);
+        return goodsPoList;
+    }
+
+    public List<GoodsPo> getGoodsByNameForAdmin(Integer page,Integer limit,String name){
+        PageHelper.startPage(page,limit);
+        List<GoodsPo> goodsPoList=goodsMapper.getGoodsByName(name);
+        return goodsPoList;
+    }
 }
