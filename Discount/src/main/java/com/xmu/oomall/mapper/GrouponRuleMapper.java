@@ -1,6 +1,6 @@
 package com.xmu.oomall.mapper;
 
-import com.xmu.oomall.domain.GrouponRule;
+import com.xmu.oomall.domain.GrouponRulePo;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -16,37 +16,57 @@ public interface GrouponRuleMapper {
     /**
      * 获取团购规则列表
      * @param id
-     * @return GrouponRule
+     * @return List<GrouponRule>
      */
-    List<GrouponRule> getGrouponRuleByGoodsId(Integer id);
+    List<GrouponRulePo> getGrouponRuleByGoodsId(Integer id);
 
     /**
      * 创建一个新的团购规则
      *
-     * @param grouponRule
-     * @return
-     */
-    GrouponRule insertGrouponRule(GrouponRule grouponRule);
-
-    /**
-     * 获取团购规则列表详细信息
-     * @param id
+     * @param grouponRulePo
      * @return GrouponRule
      */
-    GrouponRule getGrouponRuleById(Integer id);
+    Boolean insertGrouponRule(GrouponRulePo grouponRulePo);
+
+    /**
+     * 用户获取团购规则详细信息
+     * @param id
+     * @return GrouponRulePo
+     */
+    GrouponRulePo getGrouponRuleById(Integer id);
+
+    /**
+     * 用户获取团购规则详细信息
+     * @param id
+     * @return GrouponRulePo
+     */
+    GrouponRulePo adminGetGrouponRuleById(Integer id);
 
     /**
      * 修改团购规则信息
-     * @param grouponRule
-     * @return
+     * @param grouponRulePo
+     * @return GrouponRule
      */
-    GrouponRule updateGrouponRule(GrouponRule grouponRule);
+    Boolean updateGrouponRule(GrouponRulePo grouponRulePo);
 
     /**
      * 删除团购规则信息
      * @param id
-     * @return
+     * @return boolean
      */
-    void deleteGrouponRule(Integer id);
+    Boolean deleteGrouponRule(Integer id);
+
+    /**
+     * 用户获取团购活动列表
+     * @return List<GrouponRule>
+     */
+    List<GrouponRulePo> customerGetGrouponRule();
+
+    /**
+     * 管理员获取团购活动列表
+     * @return List<GrouponRule>
+     */
+    List<GrouponRulePo> adminGetGrouponRule();
+
 
 }

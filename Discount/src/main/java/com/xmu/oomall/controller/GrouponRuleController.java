@@ -1,10 +1,12 @@
 package com.xmu.oomall.controller;
 
-import com.xmu.oomall.domain.GrouponRule;
+import com.xmu.oomall.domain.GrouponRulePo;
 import com.xmu.oomall.service.GrouponRuleService;
+import com.xmu.oomall.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -12,38 +14,148 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/discount")
+@RequestMapping("/discountService")
 
 public class GrouponRuleController {
 
     @Autowired
      private GrouponRuleService grouponRuleService;
 
-    @GetMapping("/goods/{id}/grouponRules")
-    public List<GrouponRule> getGrouponRuleByGoodsId(@PathVariable   Integer id){
-        return grouponRuleService.getGrouponRuleByGoodsId(id);
+    /**
+     * 测试成功
+     * 通过商品ID获取团购规则列表
+     * @param goodsId 商品ID
+     * @param page 分页页数
+     * @param limit 分页大小
+     * @return 团购规则列表
+     */
+    @GetMapping("/grouponRules")
+    public Object getGrouponRuleByGoodsId(@RequestParam Integer goodsId,
+                                          @RequestParam(defaultValue = "1") Integer page,
+                                          @RequestParam(defaultValue = "10") Integer limit)
+    {
+        if(goodsId==null){
+            return ResponseUtil.badArgument();
+        }
+        List<GrouponRuleVo> grouponRuleVoList = grouponRuleService.getGrouponRuleByGoodsId(goodsId,page,limit);
+        return ResponseUtil.okList(grouponRuleVoList);
     }
 
+    /**
+     * 测试成功
+     * 添加团购规则
+     * @param grouponRulePo 团购规则ID
+     * @return 团购规则Po
+     */
     @PostMapping("/grouponRules")
-    public GrouponRule addGrouponRule(@RequestBody GrouponRule grouponRule){
-        return grouponRuleService.addGrouponRule(grouponRule);
+    public Object addGrouponRule(@RequestBody GrouponRulePo grouponRulePo){
+        grouponRulePo.setGmtCreate(LocalDateTime.now());
+        grouponRulePo.setGmtModified(LocalDateTime.now());
+        grouponRulePo.setBeDeleted(false);
+        if(grouponRuleService.addGrouponRule(grouponRulePo)){
+            return ResponseUtil.ok(grouponRulePo);
+        }
+        else{
+            return ResponseUtil.fail();
+        }
     }
 
+    /**
+     * 测试成功
+     * 用户通过团购规则ID获取团购规则详情
+     * @param id 团购规则ID
+     * @return GrouponRuleVo
+     */
     @GetMapping("/grouponRules/{id}")
-    public GrouponRule getGrouponRuleById(@PathVariable Integer id){
-        return grouponRuleService.getGrouponRuleById(id);
+    public Object getGrouponRuleById(@PathVariable Integer id){
+        if (id == null) {
+            return ResponseUtil.badArgument();
+        }
+        GrouponRuleVo grouponRuleVo = grouponRuleService.getGrouponRuleById(id);
+        return ResponseUtil.ok(grouponRuleVo);
     }
 
-    @PutMapping("/grouponRules")
-    public GrouponRule updateGrouponRule(@RequestBody GrouponRule grouponRule){
-        return grouponRuleService.updateGrouponRule(grouponRule);
+    /**
+     * 测试成功
+     * 管理员通过团购规则ID获取团购规则详情
+     * @param id
+     * @return
+     */
+    @GetMapping("/admin/grouponRules/{id}")
+    public Object adminGetGrouponRuleById(@PathVariable Integer id){
+        if (id == null) {
+            return ResponseUtil.badArgument();
+        }
+        GrouponRuleVo grouponRuleVo = grouponRuleService.adminGetGrouponRuleById(id);
+        return ResponseUtil.ok(grouponRuleVo);
     }
 
+    /**
+     * 测试成功
+     * 更新团购规则
+     * @param id 团购规则ID
+     * @param grouponRulePo GrouponRulePo
+     * @return GrouponRulePo
+     */
+    @PutMapping("/grouponRules/{id}")
+    public Object updateGrouponRule(@PathVariable Integer id,
+                                    @RequestBody GrouponRulePo grouponRulePo){
+        if(id==null){
+            return ResponseUtil.badArgument();
+        }
+        grouponRulePo.setGmtModified(LocalDateTime.now());
+        grouponRulePo.setId(id);
+        if(grouponRuleService.updateGrouponRule(grouponRulePo)){
+            return ResponseUtil.ok(grouponRulePo);
+        }
+        else{
+            return ResponseUtil.fail();
+        }
+    }
+
+    /**
+     * 测试成功
+     * 删除团购规则
+     * @param id 团购规则ID
+     */
     @DeleteMapping("/grouponRules/{id}")
-    public void deleteGrouponRuleById(@PathVariable Integer id){
-        grouponRuleService.deleteGrouponRule(id);
+    public Object deleteGrouponRuleById(@PathVariable Integer id){
+        if(id == null){
+            return ResponseUtil.badArgument();
+        }
+        else if(grouponRuleService.deleteGrouponRule(id)) {
+            return ResponseUtil.ok();
+        }
+        else {
+            return ResponseUtil.fail();
+        }
     }
 
-//    @GetMapping("/grouponRules/{id}/joinInformation")
-//    public List<GrouponRule> my(@LoginUser Integer userId, @RequestParam(defaultValue = "0") Integer showType)
+    /**
+     * 测试成功
+     * 普通用户获取团购规则列表（未删除）
+     * @param page 分页数量
+     * @param limit 分页大小
+     * @return List<GrouponRuleVo>
+     */
+    @GetMapping("/grouponGoods")
+    public Object customerGetGrouponRules(@RequestParam(defaultValue = "1") Integer page,
+                                          @RequestParam(defaultValue = "10") Integer limit){
+        List<GrouponRuleVo> grouponRuleVoList = grouponRuleService.customerGetGrouponRule(page, limit);
+        return ResponseUtil.okList(grouponRuleVoList);
+    }
+
+    /**
+     * 测试成功
+     * 管理员获取团购规则列表（全部）
+     * @param page 分页数量
+     * @param limit 分页大小
+     * @return List<GrouponRuleVo>
+     */
+    @GetMapping("/admin/grouponGoods")
+    public Object adminGetGrouponRules(@RequestParam(defaultValue = "1") Integer page,
+                                       @RequestParam(defaultValue = "10") Integer limit){
+        List<GrouponRuleVo> grouponRuleVoList = grouponRuleService.adminGetGrouponRule(page,limit);
+        return ResponseUtil.okList(grouponRuleVoList);
+    }
 }

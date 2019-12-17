@@ -1,6 +1,7 @@
 package com.xmu.oomall.dao;
 
-import com.xmu.oomall.domain.GrouponRule;
+import com.github.pagehelper.PageHelper;
+import com.xmu.oomall.domain.GrouponRulePo;
 import com.xmu.oomall.mapper.GrouponRuleMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,23 +16,42 @@ public class GrouponRuleDao {
     @Autowired
     private GrouponRuleMapper grouponRuleMapper;
 
-    public List<GrouponRule> getGrouponRuleByGoodsId(Integer id){
-        return  grouponRuleMapper.getGrouponRuleByGoodsId(id);
+    public List<GrouponRulePo> getGrouponRuleByGoodsId(Integer id,Integer page,Integer limit){
+        PageHelper.startPage(page,limit);
+        List<GrouponRulePo> grouponRulePoList = grouponRuleMapper.getGrouponRuleByGoodsId(id);
+        return grouponRulePoList;
     }
 
-    public GrouponRule addGrouponRule(GrouponRule grouponRule){
-        return grouponRuleMapper.insertGrouponRule(grouponRule);
+    public Boolean addGrouponRule(GrouponRulePo grouponRulePo){
+        return grouponRuleMapper.insertGrouponRule(grouponRulePo);
     }
 
-    public GrouponRule getGrouponRuleById(Integer id){
+    public GrouponRulePo getGrouponRuleById(Integer id){
         return grouponRuleMapper.getGrouponRuleById(id);
     }
 
-    public GrouponRule updateGrouponRule(GrouponRule grouponRule){
-        return grouponRuleMapper.updateGrouponRule(grouponRule);
+    public GrouponRulePo adminGetGrouponRuleById(Integer id) {
+        return grouponRuleMapper.adminGetGrouponRuleById(id);
+    }
+
+    public Boolean updateGrouponRule(GrouponRulePo grouponRulePo){
+        return grouponRuleMapper.updateGrouponRule(grouponRulePo);
     };
 
-    public void deleteGrouponRule(Integer id){
-        grouponRuleMapper.deleteGrouponRule(id);
+    public Boolean deleteGrouponRule(Integer id){
+        return grouponRuleMapper.deleteGrouponRule(id);
     };
+
+    public List<GrouponRulePo> customerGetGrouponRule(Integer page, Integer limit) {
+        PageHelper.startPage(page,limit);
+        List<GrouponRulePo> grouponRulePoList = grouponRuleMapper.customerGetGrouponRule();
+        return grouponRulePoList;
+    }
+
+    public List<GrouponRulePo> adminGetGrouponRule(Integer page, Integer limit) {
+        PageHelper.startPage(page,limit);
+        List<GrouponRulePo> grouponRulePoList = grouponRuleMapper.adminGetGrouponRule();
+        return  grouponRulePoList;
+    }
+
 }
