@@ -21,7 +21,7 @@ public class ProductService {
         return productDao.findProductsByGoodsId(id);
     }
 
-    public List<ProductPo> addProduct(Integer id,ProductPo productPo) {
+    public ProductPo addProduct(Integer id,ProductPo productPo) {
         return productDao.addProduct(id,productPo);
     }
 
