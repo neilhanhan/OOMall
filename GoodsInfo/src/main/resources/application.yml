@@ -4,9 +4,13 @@ server:
 spring:
   datasource:
     username: root
-    password: 666666
+    password: cai123
     url: jdbc:mysql://localhost:3306/oomall?serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: localhost
+    port: 6379
+
 mybatis:
   #domain对象的包
   type-aliases-package: com.xmu.oomall.domain
@@ -15,3 +19,17 @@ mybatis:
   configuration:
     #自动将SQL中查出来的带下划线的字段，转换为驼峰标志，再去匹配类中的属性
     map-underscore-to-camel-case: true
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params:
+
+oomall:
+  #最大付款时间, 单位分钟
+  maxpaytime: 30
+  #redis缓存失效时间，单位分钟
+  redisexpiretime: 1
+  #预提库存数量
+  predeductQty: 3

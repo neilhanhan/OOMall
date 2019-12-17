@@ -33,8 +33,13 @@ public class BrandService {
         return brandDao.deleteBrandById(id);
     }
 
-    public List<Brand>listBrandByCodition()
+    public List<Brand>listBrandByCodition(Integer page,Integer limit)
     {
-        return brandDao.listBrandByCodition();
+        return brandDao.listBrandByCodition(page,limit);
+    }
+
+    public List<Brand> listBrand()
+    {
+        return brandDao.listBrand();
     }
 }

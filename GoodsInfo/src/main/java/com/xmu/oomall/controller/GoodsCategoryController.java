@@ -13,6 +13,56 @@ public class GoodsCategoryController {
     private GoodsCategoryService goodsCategoryService;
 
     /**
+     * GET
+     * /categories
+     * return List<goodsCategory>
+     *      finished
+     * POST
+     * /categories
+     * @RequestBody(goodsCategory)
+     * return goodsCategory
+     *      finished
+     * GET
+     * /categories/l1
+     * return List<goodsCategory>
+     *
+     * GET
+     * /categories/{id}
+     * @PathVariable(id)
+     * return goodsCategory
+     *      finished
+     *
+     * PUT
+     * /categories/{id}
+     * @PathVariable(id) @RequestBody(goodsCategory)
+     * return goodsCategory
+     *      finished
+     *
+     * DELETE
+     * /categories/{id}
+     * @PathVariable(id)
+     *
+     * GET
+     * /categories
+     * return List<goodsCategory>
+     *     finished
+     *
+     * GET
+     * /categories/l1
+     * return List<goodsCategory>
+     *
+     * GET
+     * /categories/l1/{id}/l2
+     * @PathVariable(id)
+     * return goodsCategory
+     *
+     * GET
+     * /categories/{id}
+     * @PathVariable(id)
+     * return goodsCategory
+     */
+
+    /**
      * 查看所有的分类
      * @return
      */
@@ -83,7 +133,7 @@ public class GoodsCategoryController {
      * @param id 分类类目ID
      * @return 当前分类栏目
      */
-    @GetMapping("categories/l1/{id}/l2/{pid}")
+    @GetMapping("categories/l1/{id}/l2")
     public List<GoodsCategory> listSecondLevelGoodsCategoryById(@PathVariable Integer id)
     {
         return goodsCategoryService.listSecondLevelGoodsCategoryById(id);

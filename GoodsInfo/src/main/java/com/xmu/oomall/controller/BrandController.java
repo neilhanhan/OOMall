@@ -14,6 +14,49 @@ public class BrandController{
     @Autowired
     private BrandService brandService;
 
+    /**
+     *GET
+     * /admins/brands
+     * RequestParam(page)
+     * RequestParam(limit)
+     * return List<brand>
+     *     finished;
+     *
+     * POST
+     * /brands
+     * @RequestBody(brand)
+     * return brand
+     *      finished;
+     *
+     * GET
+     * /brands/{id}
+     * @PathVariable(id)
+     * return brand
+     *      finished;
+     *
+     * PUT
+     * /brands/{id}
+     * @PathVariable(id) @RequestBody(brand)
+     * return brand
+     *      finished;
+     *
+     * DELETE
+     * /brands/{id}
+     * @PathVariable(id)
+     *      finished;
+     *
+     * GET
+     * /brands
+     * return List<brand>
+     *     finished
+     *
+     * GET
+     * /brands/{id}
+     * @PathVariable(id)
+     * return brand
+     *      finished
+     */
+
     @GetMapping("/brands/{id}")
     public Brand getBrandById(@PathVariable("id")Integer id)
     {
@@ -39,12 +82,24 @@ public class BrandController{
     }
 
     @GetMapping("/admins/brands")
-    public List<Brand> listBrandByCodition(@RequestParam String id,
-                                           @RequestParam String name,
-                                           @RequestParam Integer page,
+    public List<Brand> listBrandByCodition(@RequestParam Integer page,
                                            @RequestParam Integer limit
                                            )
     {
-        return brandService.listBrandByCodition();
+        if(page==null)
+        {
+            page=1;
+        }
+        if(limit==null)
+        {
+            limit=10;
+        }
+        return brandService.listBrandByCodition(page,limit);
+    }
+
+    @GetMapping("/brands")
+    public List<Brand> listBrand()
+    {
+        return brandService.listBrand();
     }
 }
