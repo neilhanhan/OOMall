@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xmu.oomall.mapper.PresaleRuleMapper">
+
+
+    <update id="deletePresaleRule" parameterType="Integer">
+        update oomall_presale_rule set is_deleted = true
+        where id=#{id} and is_deleted!=true;
+    </update>
+
+    <select id="adminGetGrouponRule" resultType="com.xmu.oomall.domain.PresaleRule">
+        select * from oomall_presale_rule;
+    </select>
+
+    <select id="customerGetGrouponRule" resultType="com.xmu.oomall.domain.PresaleRule">
+        select * from oomall_presale_rule
+        where is_deleted!=true;
+    </select>
+
+
+</mapper>

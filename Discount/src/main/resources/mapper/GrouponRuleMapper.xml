@@ -33,7 +33,8 @@
     </update>
 
     <update id="deleteGrouponRule">
-        update oomall_groupon_rule set is_deleted='1' where id=#{id} and is_deleted!=true;
+        update oomall_groupon_rule set is_deleted=true
+        where id=#{id} and is_deleted!=true;
     </update>
 
     <select id="customerGetGrouponRule" resultType="com.xmu.oomall.domain.GrouponRulePo">
