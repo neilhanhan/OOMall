@@ -52,10 +52,6 @@ public class GoodsCategoryDao{
         goodsCategoryPo.setGmtCreate(time);
         goodsCategoryPo.setGmtModified(time);
         goodsCategoryPo.setBeDeleted(false);
-        if(goodsCategoryPo.getPid()==null){
-            goodsCategoryPo.setPid(null);
-        }
-
         int success=goodsCategoryMapper.addCategory(goodsCategoryPo);
         if(success!=0)
         {
