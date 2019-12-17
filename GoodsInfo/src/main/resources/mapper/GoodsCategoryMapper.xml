@@ -30,7 +30,7 @@
     </update>
 
     <select id="getLevelOneCategories" resultType="com.xmu.oomall.domain.GoodsCategoryPo">
-        select * from oomall_goods_category where pid=null and is_deleted!=true;
+        select * from oomall_goods_category where pid is null and is_deleted!=true;
     </select>
     
     <select id="getLevelTwoCategories" resultType="com.xmu.oomall.domain.GoodsCategoryPo" parameterType="Integer">

@@ -43,7 +43,7 @@ public class GoodsCategoryDao{
                 subList=categoryPoList.subList((page-1)*limit,page*limit);
             }
         }
-        return subList;
+        return ResponseUtil.ok(subList);
     }
 
     public Object addCategory(GoodsCategoryPo goodsCategoryPo)
@@ -52,11 +52,10 @@ public class GoodsCategoryDao{
         goodsCategoryPo.setGmtCreate(time);
         goodsCategoryPo.setGmtModified(time);
         goodsCategoryPo.setBeDeleted(false);
-
         int success=goodsCategoryMapper.addCategory(goodsCategoryPo);
         if(success!=0)
         {
-            return goodsCategoryPo;
+            return ResponseUtil.ok(goodsCategoryPo);
         }
         else {
             return ResponseUtil.fail(505,"新建数据项失败");
@@ -76,7 +75,7 @@ public class GoodsCategoryDao{
             redisTemplate.opsForValue().set(key, goodsCategoryPo, config.getRedisExpireTime(), TimeUnit.MINUTES);
 //            logger.debug("Redis中存入 goods = "+goods);
         }
-        return goodsCategoryPo;
+        return ResponseUtil.ok(goodsCategoryPo);
     }
 
     public Object updateCategory(Integer id,GoodsCategoryPo goodsCategoryPo)
@@ -87,7 +86,7 @@ public class GoodsCategoryDao{
         if(success==0){
             return ResponseUtil.fail(402,"数据库中无此id或分类已被删除");
         }
-        return goodsCategoryMapper.getCategoryById(id);
+        return ResponseUtil.ok(goodsCategoryMapper.getCategoryById(id));
     }
 
     public Object deleteCategory(Integer id)
@@ -97,16 +96,16 @@ public class GoodsCategoryDao{
         {
             return ResponseUtil.fail(402,"数据库中无此id或分类已被删除");
         }
-        return null;
+        return ResponseUtil.ok();
     }
 
     public Object getLevelOneCategories()
     {
-        return goodsCategoryMapper.getLevelOneCategories();
+        return ResponseUtil.ok(goodsCategoryMapper.getLevelOneCategories());
     }
 
     public Object getLevelTwoCategories(Integer id)
     {
-        return goodsCategoryMapper.getLevelTwoCategories(id);
+        return ResponseUtil.ok(goodsCategoryMapper.getLevelTwoCategories(id));
     }
 }
