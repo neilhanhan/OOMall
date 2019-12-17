@@ -22,7 +22,7 @@ public class GoodsDao {
         if(goods.getStatusCode()!=0){
             return goods;
         }
-        return null;
+        return goods;
     }
 
     public Goods findGoodByIdForAdmin(Integer id){
@@ -73,5 +73,9 @@ public class GoodsDao {
         PageHelper.startPage(page,limit);
         List<GoodsPo> goodsPoList=goodsMapper.getGoodsByName(name);
         return goodsPoList;
+    }
+
+    public List<GoodsPo> getGoods(){
+        return goodsMapper.getGoods();
     }
 }

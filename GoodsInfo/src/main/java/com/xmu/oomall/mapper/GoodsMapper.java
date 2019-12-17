@@ -67,5 +67,12 @@ public interface GoodsMapper {
      */
     List<GoodsPo> getGoodsByNameForAdmin(String name);
 
+    /**
+     * 获取热销商品
+     * @return
+     */
+    List<GoodsPo> getGoods();
+
+
 
 }

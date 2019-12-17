@@ -54,5 +54,9 @@
     <select id="getGoodsByNameForAdmin" resultType="GoodsPo" parameterType="String">
         select * from oomall_goods where name=#{name} and is_deleted=0
     </select>
+    
+    <select id="getGoods" resultType="GoodsPo">
+        select * from oomall_goods where status=4
+    </select>
 
 </mapper>
