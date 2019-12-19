@@ -23,13 +23,17 @@ public class PresaleRuleDao {
 
     public List<PresaleRule> adminGetPresaleRule(Integer page, Integer limit) {
         PageHelper.startPage(page,limit);
-        List<PresaleRule> presaleRuleList = presaleRuleMapper.adminGetGrouponRule();
+        List<PresaleRule> presaleRuleList = presaleRuleMapper.adminGetPresaleRule();
         return  presaleRuleList;
     }
 
     public List<PresaleRule> customerGetPresaleRule(Integer page, Integer limit) {
         PageHelper.startPage(page,limit);
-        List<PresaleRule> presaleRuleList = presaleRuleMapper.customerGetGrouponRule();
+        List<PresaleRule> presaleRuleList = presaleRuleMapper.customerGetPresaleRule();
         return  presaleRuleList;
+    }
+
+    public PresaleRule getPresaleRuleById(Integer id) {
+        return presaleRuleMapper.getPresaleRuleById(id);
     }
 }

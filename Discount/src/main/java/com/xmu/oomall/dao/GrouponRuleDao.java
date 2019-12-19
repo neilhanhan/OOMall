@@ -6,6 +6,8 @@ import com.xmu.oomall.mapper.GrouponRuleMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Time;
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -36,11 +38,12 @@ public class GrouponRuleDao {
 
     public Boolean updateGrouponRule(GrouponRulePo grouponRulePo){
         return grouponRuleMapper.updateGrouponRule(grouponRulePo);
-    };
+    }
 
     public Boolean deleteGrouponRule(Integer id){
-        return grouponRuleMapper.deleteGrouponRule(id);
-    };
+        LocalDateTime modifiedTime= LocalDateTime.now();
+        return grouponRuleMapper.deleteGrouponRule(id,modifiedTime);
+    }
 
     public List<GrouponRulePo> customerGetGrouponRule(Integer page, Integer limit) {
         PageHelper.startPage(page,limit);

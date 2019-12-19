@@ -1,4 +1,4 @@
-package com.xmu.oomall.controller;
+package com.xmu.oomall.vo;
 
 import com.xmu.oomall.domain.GoodsPo;
 import com.xmu.oomall.domain.GrouponRulePo;

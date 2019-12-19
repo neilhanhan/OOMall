@@ -5,16 +5,21 @@
 
     <update id="deletePresaleRule" parameterType="Integer">
         update oomall_presale_rule set is_deleted = true
-        where id=#{id} and is_deleted!=true;
+        where id=#{id} and is_deleted!=true and status!=true;
     </update>
 
-    <select id="adminGetGrouponRule" resultType="com.xmu.oomall.domain.PresaleRule">
+    <select id="adminGetPresaleRule" resultType="com.xmu.oomall.domain.PresaleRule">
         select * from oomall_presale_rule;
     </select>
 
-    <select id="customerGetGrouponRule" resultType="com.xmu.oomall.domain.PresaleRule">
+    <select id="customerGetPresaleRule" resultType="com.xmu.oomall.domain.PresaleRule">
         select * from oomall_presale_rule
-        where is_deleted!=true;
+        where is_deleted!=true and status = true;
+    </select>
+
+    <select id="getPresaleRuleById" resultType="com.xmu.oomall.domain.PresaleRule">
+        select * from oomall_presale_rule
+        where id = #{id} and is_deleted!=true and status = true;
     </select>
 
 

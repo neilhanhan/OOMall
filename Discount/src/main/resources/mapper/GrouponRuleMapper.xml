@@ -33,12 +33,12 @@
     </update>
 
     <update id="deleteGrouponRule">
-        update oomall_groupon_rule set is_deleted=true
+        update oomall_groupon_rule set is_deleted=true and gmt_modified=#{time}
         where id=#{id} and is_deleted!=true;
     </update>
 
     <select id="customerGetGrouponRule" resultType="com.xmu.oomall.domain.GrouponRulePo">
-        select * from oomall_groupon_rule where is_deleted!=true;
+        select * from oomall_groupon_rule where is_deleted!=true and status = true;
     </select>
 
     <select id="adminGetGrouponRule" resultType="com.xmu.oomall.domain.GrouponRulePo">

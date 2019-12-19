@@ -1,5 +1,6 @@
 package com.xmu.oomall.controller;
 
+import com.xmu.oomall.vo.GrouponRuleVo;
 import com.xmu.oomall.domain.GrouponRulePo;
 import com.xmu.oomall.service.GrouponRuleService;
 import com.xmu.oomall.util.ResponseUtil;
@@ -25,7 +26,7 @@ public class GrouponRuleController {
      * 测试成功
      * 通过商品ID获取团购规则列表
      * @param goodsId 商品ID
-     * @param page 分页页数
+     * @param page 页数
      * @param limit 分页大小
      * @return 团购规则列表
      */
@@ -34,8 +35,8 @@ public class GrouponRuleController {
                                           @RequestParam(defaultValue = "1") Integer page,
                                           @RequestParam(defaultValue = "10") Integer limit)
     {
-        if(goodsId==null){
-            return ResponseUtil.badArgument();
+        if(goodsId==null||goodsId<0){
+            return ResponseUtil.badArgumentValue();
         }
         List<GrouponRuleVo> grouponRuleVoList = grouponRuleService.getGrouponRuleByGoodsId(goodsId,page,limit);
         return ResponseUtil.okList(grouponRuleVoList);
@@ -52,6 +53,7 @@ public class GrouponRuleController {
         grouponRulePo.setGmtCreate(LocalDateTime.now());
         grouponRulePo.setGmtModified(LocalDateTime.now());
         grouponRulePo.setBeDeleted(false);
+        grouponRulePo.setStatusCode(true);
         if(grouponRuleService.addGrouponRule(grouponRulePo)){
             return ResponseUtil.ok(grouponRulePo);
         }
@@ -62,7 +64,7 @@ public class GrouponRuleController {
 
     /**
      * 测试成功
-     * 用户通过团购规则ID获取团购规则详情
+     * 用户通过团购规则ID获取团购活动
      * @param id 团购规则ID
      * @return GrouponRuleVo
      */
@@ -133,8 +135,8 @@ public class GrouponRuleController {
 
     /**
      * 测试成功
-     * 普通用户获取团购规则列表（未删除）
-     * @param page 分页数量
+     * 普通用户获取团购规则列表（未删除且上架中）
+     * @param page 页数
      * @param limit 分页大小
      * @return List<GrouponRuleVo>
      */
@@ -148,7 +150,7 @@ public class GrouponRuleController {
     /**
      * 测试成功
      * 管理员获取团购规则列表（全部）
-     * @param page 分页数量
+     * @param page 页数
      * @param limit 分页大小
      * @return List<GrouponRuleVo>
      */

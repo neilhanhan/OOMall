@@ -1,7 +1,7 @@
 package com.xmu.oomall.service;
 
 import com.github.pagehelper.Page;
-import com.xmu.oomall.controller.GrouponRuleVo;
+import com.xmu.oomall.vo.GrouponRuleVo;
 import com.xmu.oomall.dao.GrouponRuleDao;
 import com.xmu.oomall.domain.GrouponRulePo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,14 +19,18 @@ public class GrouponRuleService {
     @Autowired
     public GrouponRuleDao grouponRuleDao;
 
+//    @Autowired
+//    public GoodsService goodsService;
+
     public List<GrouponRuleVo> getGrouponRuleByGoodsId(Integer id, Integer page, Integer limit){
         List<GrouponRulePo> grouponRuleList = grouponRuleDao.getGrouponRuleByGoodsId(id,page,limit);
         Page<GrouponRuleVo> grouponList = new Page<GrouponRuleVo>();
         for (GrouponRulePo grouponRulePo : grouponRuleList) {
 //            Integer goodsId = grouponRulePo.getGoodsId();
 //            GoodsPo goods = goodsService.getGoodsById(goodsId);
-//            if (goods == null)
+//            if (goods == null){
 //                continue;
+//              }
             GrouponRuleVo grouponRuleVo = new GrouponRuleVo();
             grouponRuleVo.setGrouponRulePo(grouponRulePo);
 //            grouponRuleVo.setGoodsPo(goods);

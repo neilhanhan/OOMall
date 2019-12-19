@@ -139,4 +139,49 @@ public class ResponseUtil {
     public static Object unauthz() {
         return fail(506, "无操作权限");
     }
+
+    public static Object grouponRuleUnknown() {
+        return fail(720, "无效团购规则（不存在或失效）");
+    }
+
+    public static Object grouponUpdateFail(){
+        return fail(721,"团购规则修改失败");
+    }
+
+    public static Object grouponInsertFail(){
+        return fail(722,"团购规则添加失败");
+    }
+
+    public static Object grouponDeleteFail(){
+        return fail(723,"团购规则删除失败");
+    }
+
+    public static Object joinGrouponFail(){
+        return fail(724,"无法参与团购");
+    }
+
+    public static Object presaleRuleUnknown() {
+        return fail(730, "无效团购规则（不存在或失效）");
+    }
+
+    public static Object presaleUpdateFail(){
+        return fail(731,"团购规则修改失败");
+    }
+
+    public static Object presaleInsertFail(){
+        return fail(732,"团购规则添加失败");
+    }
+
+    public static Object presaleDeleteFail() {
+        return fail(733, "团购规则删除失败");
+    }
+
+    public static Object joinPresaleFail(){
+        return fail(734,"预售商品无法购买");
+    }
+
+    public static Object payoutPresaleFail(){
+        return fail(735,"支付预售尾款失败");
+    }
+
 }
