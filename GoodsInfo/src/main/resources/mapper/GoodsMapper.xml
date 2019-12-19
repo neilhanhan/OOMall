@@ -47,5 +47,16 @@
         <select id="getGoodsByCategoryId" resultType="GoodsPo" parameterType="Integer">
         select * from oomall_goods where goods_category_id=#{id} and is_deleted=0
     </select>
+    <select id="getGoodsByName" resultType="GoodsPo" parameterType="String">
+        select * from oomall_goods where name=#{name} and is_deleted=0 and status!=0
+    </select>
+
+    <select id="getGoodsByNameForAdmin" resultType="GoodsPo" parameterType="String">
+        select * from oomall_goods where name=#{name} and is_deleted=0
+    </select>
+    
+    <select id="getGoods" resultType="GoodsPo">
+        select * from oomall_goods where status=4
+    </select>
 
 </mapper>

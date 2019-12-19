@@ -1,43 +1,26 @@
 package com.xmu.oomall.service;
 
 import com.xmu.oomall.dao.GoodsCategoryDao;
-import com.xmu.oomall.domain.GoodsCategory;
+import com.xmu.oomall.domain.GoodsCategoryPo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
-public class GoodsCategoryService {
+public class GoodsCategoryService{
     @Autowired
-    private GoodsCategoryDao goodsCategoryDao;
+    GoodsCategoryDao goodsCategoryDao;
 
-    public List<GoodsCategory> listGoodsCategory()
-    {
-        return goodsCategoryDao.listGoodsCategory();
-    }
+    public Object getAllCategories(Integer page,Integer limit){return goodsCategoryDao.getAllCategories(page, limit);}
 
-    public GoodsCategory addGoodsCategory(GoodsCategory goodsCategory)
-    {
-        return goodsCategoryDao.addGoodsCategory(goodsCategory);
-    }
+    public Object addCategory(GoodsCategoryPo goodsCategoryPo){return goodsCategoryDao.addCategory(goodsCategoryPo);}
 
-    public GoodsCategory getGoodsCategoryById(Integer id)
-    {
-        return goodsCategoryDao.getGoodsCategoryById(id);
-    }
+    public Object getCategoryById(Integer id){return goodsCategoryDao.getCategoryById(id);}
 
-    public GoodsCategory updateGoodsCategoryById(Integer id,GoodsCategory goodsCategory)
-    {
-        return goodsCategoryDao.updateGoodsCategoryById(id,goodsCategory);
-    }
+    public Object updateCategory(Integer id,GoodsCategoryPo goodsCategoryPo){return goodsCategoryDao.updateCategory(id,goodsCategoryPo);}
 
-    public GoodsCategory deleteGoodsCategory(Integer id)
-    {
-        return goodsCategoryDao.deleteGoodsCategory(id);
-    }
+    public Object deleteCategory(Integer id){return goodsCategoryDao.deleteCategory(id);}
 
-    public List<GoodsCategory> listOneLevelGoodsCategory(){return goodsCategoryDao.listOneLevelGoodsCategory();}
+    public Object getLevelOneCategories(){return goodsCategoryDao.getLevelOneCategories();}
 
-    public List<GoodsCategory> listSecondLevelGoodsCategoryById(Integer id){return goodsCategoryDao.listSecondLevelGoodsCategoryById(id);}
+    public Object getLevelTwoCategories(Integer id){return goodsCategoryDao.getLevelTwoCategories(id);}
 }

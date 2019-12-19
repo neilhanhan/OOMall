@@ -1,72 +1,123 @@
 package com.xmu.oomall.dao;
 
-import com.xmu.oomall.domain.Brand;
+import com.xmu.oomall.domain.BrandPo;
 import com.xmu.oomall.mapper.BrandMapper;
+import com.xmu.oomall.util.Config;
+import com.xmu.oomall.util.FileUtils;
+import com.xmu.oomall.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.multipart.MultipartFile;
 
-import java.util.ArrayList;
+import java.io.File;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @Repository
-public class BrandDao {
+public class BrandDao{
     @Autowired
-    private BrandMapper brandMapper;
-
-    public Brand getBrandById(Integer id)
-    {
-        return brandMapper.getBrandById(id);
-    }
-
-    public Brand updateBrandById(Integer id,Brand brand)
-    {
-        brand.setId(id);
-        brandMapper.updateBrandById(brand);
-        return brandMapper.getBrandById(id);
-    }
-
-    public Brand addBrand(Brand brand)
-    {
-        brandMapper.addBrand(brand);
-        return brand;
-    }
+    BrandMapper brandMapper;
+    @Autowired
+    private RedisTemplate redisTemplate;
+    @Autowired
+    private Config config;
 
 
-    public Brand deleteBrandById(Integer id)
-    {
-        Brand brand=brandMapper.getBrandById(id);
-        brandMapper.deleteBrandById(id);
-        return brand;
-    }
+    public Object getAllBrand(Integer page, Integer limit) {
 
-    public List<Brand> listBrandByCodition(Integer page,Integer limit)
-    {
-        List<Brand> brandList=brandMapper.listBrandByCodition();
+        List<BrandPo> brandList=brandMapper.getAllBrand();
         int pagecount=brandList.size()/limit;
         int remain=brandList.size()%limit;
         if(remain>0){
             pagecount++;
         }
         if(page>pagecount) {
-            return null;
+            return ResponseUtil.fail(402,"page值超过界限");
         }
-        List<Brand> subBrandList=null;
+        List<BrandPo> subList=null;
         if(remain==0) {
-            subBrandList=brandList.subList((page-1)*limit,page*limit);
+            subList=brandList.subList((page-1)*limit,page*limit);
         }
         else{
             if (page==pagecount){
-                subBrandList=brandList.subList((page-1)*limit,brandList.size());
+                subList=brandList.subList((page-1)*limit,brandList.size());
             }else{
-                subBrandList=brandList.subList((page-1)*limit,page*limit);
+                subList=brandList.subList((page-1)*limit,page*limit);
             }
         }
+        return ResponseUtil.ok(subList);
 
-        return subBrandList;
     }
 
-    public List<Brand> listBrand()
-    {
-        return brandMapper.listBrand();
+    public Object addBrand(BrandPo brandPo) {
+        LocalDateTime time=LocalDateTime.now();
+        brandPo.setGmtCreate(time);
+        brandPo.setGmtModified(time);
+        brandPo.setBeDeleted(false);
+        int success=brandMapper.addBrand(brandPo);
+        if(success!=0)
+        {
+            return ResponseUtil.ok(brandPo);
+        }
+        else {
+            return ResponseUtil.fail(505,"新建数据项失败");
+        }
+    }
+
+    public Object getBrandById(Integer id) {
+        String key = "Brand_"+id;
+        BrandPo brandPo = (BrandPo) redisTemplate.opsForValue().get(key);
+        if (brandPo == null) {
+//            logger.debug("Redis中无goods对象"+key);
+            brandPo = brandMapper.getBrandById(id);
+            if(brandPo==null)
+            {
+                return ResponseUtil.fail(402,"数据库中无此id或品牌已被删除");
+            }
+            redisTemplate.opsForValue().set(key, brandPo, config.getRedisExpireTime(), TimeUnit.MINUTES);
+//            logger.debug("Redis中存入 goods = "+goods);
+        }
+
+        return ResponseUtil.ok(brandPo);
+    }
+
+    public Object updateBrand(Integer id, BrandPo brandPo) {
+        brandPo.setId(id);
+        brandPo.setGmtModified(LocalDateTime.now());
+        int success=brandMapper.updateBrand(brandPo);
+        if(success==0)
+        {
+            return ResponseUtil.fail(402,"数据库中无此id或品牌已被删除");
+        }
+        return ResponseUtil.ok(brandMapper.getBrandById(id));
+    }
+
+    public Object deleteBrand(Integer id) {
+        int success=brandMapper.deleteBrand(id);
+        if(success==0)
+        {
+            return ResponseUtil.fail(402,"数据库中无此id或品牌已被删除");
+        }
+        return ResponseUtil.ok();
+    }
+
+    public Object uploadPic(MultipartFile pic) {
+        String localPath="E:"+File.separator+"image";
+        //2获得文件名字
+        String picName=pic.getOriginalFilename();
+        //2上传失败提示
+        String warning="";
+        String newFileName = FileUtils.upload(pic, localPath, picName);
+        if(newFileName != null){
+            //上传成功
+            warning=localPath+ File.separator +newFileName;
+
+        }else{
+            return ResponseUtil.fail(505,"图片上传失败");
+        }
+        return ResponseUtil.ok(warning);
+
     }
 }

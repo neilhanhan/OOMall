@@ -29,4 +29,8 @@ public class GoodsService {
     public Boolean isOnSale(Integer id){return goodsDao.isOnSale(id);}
 
     public Goods getGoodsByIdForAdmin(Integer id){return goodsDao.findGoodByIdForAdmin(id);}
+
+    public List<GoodsPo> getGoodsByName(Integer page,Integer limit,String name){return goodsDao.getGoodsByName(page,limit,name);}
+
+    public List<GoodsPo> getGoodsByNameForAdmin(Integer page,Integer limit,String name){return goodsDao.getGoodsByName(page,limit,name);}
 }

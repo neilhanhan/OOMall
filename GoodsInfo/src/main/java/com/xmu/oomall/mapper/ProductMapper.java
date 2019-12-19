@@ -29,7 +29,7 @@ public interface ProductMapper {
      * @param productPo 产品
      * @return 产品
      */
-    List<ProductPo> addProduct(ProductPo productPo);
+    Integer addProduct(ProductPo productPo);
 
     /**
      * 修改产品信息

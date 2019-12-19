@@ -3,19 +3,19 @@
 <mapper namespace="com.xmu.oomall.mapper.GoodsMapper">
     <select id="getGoodsById" parameterType="Integer" resultType="Goods">
             select *
-            from goods where id = #{id} and is_deleted=0
+            from oomall_goods where id = #{id} and is_deleted=0
     </select>
     <select id="getGoodsPoById" parameterType="Integer" resultType="GoodsPo">
             select *
-            from goods where id = #{id} and is_deleted=0
+            from oomall_goods where id = #{id} and is_deleted=0
     </select>
        <delete id="deleteGoodsById" parameterType="Integer">
-        update goods
+        update oomall_goods
         set is_deleted=1
         where id=#{id}
     </delete>
        <update id="updateGoodsById" parameterType="GoodsPo">
-              update goods
+              update oomall_goods
               <trim prefix="set" suffixOverrides=",">
                      <if test="name!=null">name=#{name},</if>
                      <if test="goodsSn!=null">goods_sn=#{goodsSn},</if>
@@ -38,14 +38,21 @@
                      <if test="gmtCreate!=null">gmt_created=#{gmtCreate},</if>
                      <if test="gmtModified!=null">gmt_modified=#{gmtModified},</if>
               </trim>
-              WHERE id=#{id}
+              WHERE id=#{id} and is_deleted=0
        </update>
        <insert id="addGoods" parameterType="GoodsPo" useGeneratedKeys="true" keyProperty="id">
-        insert into goods(name,goods_sn,short_name,description,brief,pic_url,detail,status,share_url,gallery,goods_category_id,brand_id,weight,volume,special_freight_id,is_special,price,is_deleted,gmt_create,gmt_modified)
+        insert into oomall_goods(name,goods_sn,short_name,description,brief,pic_url,detail,status,share_url,gallery,goods_category_id,brand_id,weight,volume,special_freight_id,is_special,price,is_deleted,gmt_create,gmt_modified)
         values (#{name},#{goodsSn},#{shortName},#{description},#{brief},#{picUrl},#{detail}, #{statusCode}, #{shareUrl}, #{gallery},#{goodsCategoryId},#{brandId},#{weight},#{volume},#{specialFreightId},#{beSpecial},#{price},#{beDeleted},#{gmtCreate},#{gmtModified})
     </insert>
         <select id="getGoodsByCategoryId" resultType="GoodsPo" parameterType="Integer">
-        select * from goods where goods_category_id=#{id} and is_deleted=0
+        select * from oomall_goods where goods_category_id=#{id} and is_deleted=0
+    </select>
+    <select id="getGoodsByName" resultType="GoodsPo" parameterType="String">
+        select * from oomall_goods where name=#{name} and is_deleted=0 and status!=0
+    </select>
+
+    <select id="getGoodsByNameForAdmin" resultType="GoodsPo" parameterType="String">
+        select * from oomall_goods where name=#{name} and is_deleted=0
     </select>
 
 </mapper>

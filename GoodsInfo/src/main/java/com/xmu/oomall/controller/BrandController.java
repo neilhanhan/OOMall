@@ -1,105 +1,55 @@
 package com.xmu.oomall.controller;
 
 import com.xmu.oomall.domain.Brand;
+import com.xmu.oomall.domain.BrandPo;
 import com.xmu.oomall.service.BrandService;
+import com.xmu.oomall.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
-import java.time.LocalDate;
 import java.util.List;
-import java.time.LocalDateTime;
 
 @RestController
 public class BrandController{
     @Autowired
-    private BrandService brandService;
+    BrandService brandService;
 
-    /**
-     *GET
-     * /admins/brands
-     * RequestParam(page)
-     * RequestParam(limit)
-     * return List<brand>
-     *     finished;
-     *
-     * POST
-     * /brands
-     * @RequestBody(brand)
-     * return brand
-     *      finished;
-     *
-     * GET
-     * /brands/{id}
-     * @PathVariable(id)
-     * return brand
-     *      finished;
-     *
-     * PUT
-     * /brands/{id}
-     * @PathVariable(id) @RequestBody(brand)
-     * return brand
-     *      finished;
-     *
-     * DELETE
-     * /brands/{id}
-     * @PathVariable(id)
-     *      finished;
-     *
-     * GET
-     * /brands
-     * return List<brand>
-     *     finished
-     *
-     * GET
-     * /brands/{id}
-     * @PathVariable(id)
-     * return brand
-     *      finished
-     */
+    @GetMapping("/admins/brands")
+    public Object getAllBrand(@RequestParam("page") Integer page,
+                              @RequestParam("limit") Integer limit)
+    {
+        return brandService.getAllBrand(page,limit);
+    }
+
+    @PostMapping("/brands")
+    public Object addBrand(@RequestBody BrandPo brandPo){
+        return brandService.addBrand(brandPo);
+    }
 
     @GetMapping("/brands/{id}")
-    public Brand getBrandById(@PathVariable("id")Integer id)
+    public Object getBrandById(@PathVariable("id") Integer id)
     {
         return brandService.getBrandById(id);
     }
 
     @PutMapping("/brands/{id}")
-    public Brand updateBrandById(@PathVariable Integer id,@RequestBody Brand brand)
+    public Object updateBrand(@PathVariable("id") Integer id,@RequestBody BrandPo brandPo)
     {
-        return brandService.updateBrandById(id,brand);
-    }
-
-    @PostMapping("/brands")
-    public Brand addBrand(@RequestBody Brand brand)
-    {
-        return brandService.addBrand(brand);
+        return brandService.updateBrand(id,brandPo);
     }
 
     @DeleteMapping("/brands/{id}")
-    public Brand deleteBrandById(@PathVariable Integer id)
+    public Object deleteBrand(@PathVariable("id") Integer id)
     {
-        return brandService.deleteBrandById(id);
+        return brandService.deleteBrand(id);
     }
 
-    @GetMapping("/admins/brands")
-    public List<Brand> listBrandByCodition(@RequestParam Integer page,
-                                           @RequestParam Integer limit
-                                           )
+    @PostMapping("/pic")
+    public Object uploadPic(@RequestBody MultipartFile pic)
     {
-        if(page==null)
-        {
-            page=1;
-        }
-        if(limit==null)
-        {
-            limit=10;
-        }
-        return brandService.listBrandByCodition(page,limit);
+        return brandService.uploadPic(pic);
     }
 
-    @GetMapping("/brands")
-    public List<Brand> listBrand()
-    {
-        return brandService.listBrand();
-    }
+
 }

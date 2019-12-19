@@ -1,6 +1,7 @@
 package com.xmu.oomall.dao;
 
 import com.xmu.oomall.domain.Goods;
+import com.xmu.oomall.domain.GoodsPo;
 import com.xmu.oomall.domain.Product;
 import com.xmu.oomall.domain.ProductPo;
 import com.xmu.oomall.mapper.GoodsMapper;
@@ -70,23 +71,25 @@ public class ProductDao {
     }
 
     /**
-     *
+     * 往商品里添加产品
      * @param id 商品id
      * @param productPo 产品
      * @return
      */
-    public List<ProductPo> addProduct(Integer id,ProductPo productPo) {
+    public ProductPo addProduct(Integer id, ProductPo productPo) {
         productPo.setGoodsId(id);
         productPo.setGmtCreate(LocalDateTime.now());
         productPo.setGmtModified(LocalDateTime.now());
-        return productMapper.addProduct(productPo);
+        productMapper.addProduct(productPo);
+        return productPo;
+        //return goodsMapper.getGoodsPoById(productPo.getGoodsId());
     }
 
     /**
      * 修改产品信息
-     *
-     * @param productPo 产品
-     * @return
+     * @param id 产品id
+     * @param productPo 产品信息
+     * @return 产品信息
      */
     public ProductPo updateProduct(Integer id,ProductPo productPo) {
         productPo.setId(id);
@@ -102,8 +105,7 @@ public class ProductDao {
      * @return
      */
     public Integer deleteProduct(Integer id) {
-
-
+        productMapper.findProductById(id).setGmtModified(LocalDateTime.now());
         return productMapper.deleteProduct(id);
     }
 }

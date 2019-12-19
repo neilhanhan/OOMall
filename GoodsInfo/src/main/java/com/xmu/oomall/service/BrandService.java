@@ -2,44 +2,40 @@ package com.xmu.oomall.service;
 
 import com.xmu.oomall.dao.BrandDao;
 import com.xmu.oomall.domain.Brand;
-import com.xmu.oomall.mapper.BrandMapper;
+import com.xmu.oomall.domain.BrandPo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
 @Service
-public class BrandService {
+public class BrandService{
     @Autowired
-    private BrandDao brandDao;
+    BrandDao brandDao;
 
-    public Brand getBrandById(Integer id)
+    public Object getAllBrand(Integer page,Integer limit)
     {
+        return brandDao.getAllBrand(page,limit);
+    }
+
+    public Object addBrand(BrandPo brandPo) {
+        return brandDao.addBrand(brandPo);
+    }
+
+    public Object getBrandById(Integer id) {
         return brandDao.getBrandById(id);
     }
 
-    public Brand updateBrandById(Integer id,Brand brand)
-    {
-        return brandDao.updateBrandById(id,brand);
+    public Object updateBrand(Integer id, BrandPo brandPo) {
+        return brandDao.updateBrand(id,brandPo);
     }
 
-    public Brand addBrand(Brand brand)
-    {
-        return brandDao.addBrand(brand);
+    public Object deleteBrand(Integer id) {
+        return brandDao.deleteBrand(id);
     }
 
-    public Brand deleteBrandById(Integer id)
-    {
-        return brandDao.deleteBrandById(id);
-    }
-
-    public List<Brand>listBrandByCodition(Integer page,Integer limit)
-    {
-        return brandDao.listBrandByCodition(page,limit);
-    }
-
-    public List<Brand> listBrand()
-    {
-        return brandDao.listBrand();
+    public Object uploadPic(MultipartFile pic) {
+        return brandDao.uploadPic(pic);
     }
 }

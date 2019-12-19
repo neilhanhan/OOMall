@@ -1,0 +1,302 @@
+2019-12-17 16:53:35.022 [main] INFO  com.xmu.oomall.OomallApplication - Starting OomallApplication on LAPTOP-O7RFFOA8 with PID 16388 (C:\Users\97392\IdeaProjects\oomall\GoodsInfo\target\classes started by 97392 in C:\Users\97392\IdeaProjects\oomall)
+2019-12-17 16:53:35.025 [main] INFO  com.xmu.oomall.OomallApplication - No active profile set, falling back to default profiles: default
+2019-12-17 16:53:37.074 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-17 16:53:37.078 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-17 16:53:37.136 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32ms. Found 0 repository interfaces.
+2019-12-17 16:53:37.699 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-17 16:53:38.117 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-12-17 16:53:38.143 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-17 16:53:38.143 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-12-17 16:53:38.143 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-17 16:53:38.145 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2019-12-17 16:53:38.145 [main] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-12-17 16:53:38.145 [main] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-12-17 16:53:38.165 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2019-12-17 16:53:38.343 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-17 16:53:38.343 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3197 ms
+2019-12-17 16:53:39.863 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-17 16:53:40.308 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-17 16:53:40.353 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-12-17 16:53:40.385 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-17 16:53:40.387 [main] INFO  com.xmu.oomall.OomallApplication - Started OomallApplication in 6.324 seconds (JVM running for 7.523)
+2019-12-17 16:53:40.901 [RMI TCP Connection(1)-192.168.199.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-17 16:53:40.902 [RMI TCP Connection(1)-192.168.199.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-12-17 16:53:40.902 [RMI TCP Connection(2)-192.168.199.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-12-17 16:53:40.910 [RMI TCP Connection(1)-192.168.199.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2019-12-17 16:53:43.968 [RMI TCP Connection(2)-192.168.199.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-12-17 16:53:44.166 [RMI TCP Connection(2)-192.168.199.1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-12-17 16:53:44.168 [RMI TCP Connection(2)-192.168.199.1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-12-17 16:57:30.663 [main] INFO  com.xmu.oomall.OomallApplication - Starting OomallApplication on LAPTOP-O7RFFOA8 with PID 8352 (C:\Users\97392\IdeaProjects\oomall\GoodsInfo\target\classes started by 97392 in C:\Users\97392\IdeaProjects\oomall)
+2019-12-17 16:57:30.680 [main] INFO  com.xmu.oomall.OomallApplication - No active profile set, falling back to default profiles: default
+2019-12-17 16:57:31.697 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-17 16:57:31.699 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-17 16:57:31.734 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22ms. Found 0 repository interfaces.
+2019-12-17 16:57:32.025 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-17 16:57:32.570 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-12-17 16:57:32.593 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-17 16:57:32.594 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-12-17 16:57:32.594 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-17 16:57:32.596 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2019-12-17 16:57:32.596 [main] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-12-17 16:57:32.596 [main] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-12-17 16:57:32.623 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2019-12-17 16:57:32.879 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-17 16:57:32.879 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2100 ms
+2019-12-17 16:57:34.206 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-17 16:57:34.566 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-17 16:57:34.605 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-12-17 16:57:34.625 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-17 16:57:34.628 [main] INFO  com.xmu.oomall.OomallApplication - Started OomallApplication in 4.984 seconds (JVM running for 6.522)
+2019-12-17 16:57:35.076 [RMI TCP Connection(2)-192.168.199.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-17 16:57:35.076 [RMI TCP Connection(2)-192.168.199.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-12-17 16:57:35.081 [RMI TCP Connection(1)-192.168.199.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-12-17 16:57:35.084 [RMI TCP Connection(2)-192.168.199.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2019-12-17 16:57:36.392 [RMI TCP Connection(1)-192.168.199.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-12-17 16:57:36.537 [RMI TCP Connection(1)-192.168.199.1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-12-17 16:57:36.538 [RMI TCP Connection(1)-192.168.199.1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-12-17 20:24:18.135 [main] INFO  com.xmu.oomall.OomallApplication - Starting OomallApplication on LAPTOP-O7RFFOA8 with PID 19768 (C:\Users\97392\IdeaProjects\oomall\GoodsInfo\target\classes started by 97392 in C:\Users\97392\IdeaProjects\oomall)
+2019-12-17 20:24:18.139 [main] INFO  com.xmu.oomall.OomallApplication - No active profile set, falling back to default profiles: default
+2019-12-17 20:24:21.601 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-17 20:24:21.612 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-17 20:24:21.759 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 92ms. Found 0 repository interfaces.
+2019-12-17 20:24:22.890 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-17 20:24:24.230 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-12-17 20:24:24.261 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-17 20:24:24.263 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-12-17 20:24:24.263 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-17 20:24:24.267 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2019-12-17 20:24:24.268 [main] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-12-17 20:24:24.268 [main] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-12-17 20:24:24.356 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2019-12-17 20:24:24.836 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-17 20:24:24.838 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 6615 ms
+2019-12-17 20:24:28.208 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-17 20:24:28.808 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-17 20:24:28.891 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-12-17 20:24:28.939 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-17 20:24:28.946 [main] INFO  com.xmu.oomall.OomallApplication - Started OomallApplication in 12.135 seconds (JVM running for 14.28)
+2019-12-17 20:24:29.335 [RMI TCP Connection(4)-192.168.199.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-12-17 20:24:30.045 [RMI TCP Connection(6)-192.168.199.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-17 20:24:30.045 [RMI TCP Connection(6)-192.168.199.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-12-17 20:24:30.055 [RMI TCP Connection(6)-192.168.199.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2019-12-17 20:24:31.171 [RMI TCP Connection(4)-192.168.199.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-12-17 20:24:31.955 [RMI TCP Connection(4)-192.168.199.1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-12-17 20:24:31.958 [RMI TCP Connection(4)-192.168.199.1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-12-17 23:03:42.784 [main] INFO  com.xmu.oomall.OomallApplication - Starting OomallApplication on LAPTOP-O7RFFOA8 with PID 22192 (C:\Users\97392\IdeaProjects\oomall\GoodsInfo\target\classes started by 97392 in C:\Users\97392\IdeaProjects\oomall)
+2019-12-17 23:03:42.788 [main] INFO  com.xmu.oomall.OomallApplication - No active profile set, falling back to default profiles: default
+2019-12-17 23:03:44.967 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-17 23:03:44.972 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-17 23:03:45.021 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27ms. Found 0 repository interfaces.
+2019-12-17 23:03:45.609 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-17 23:03:46.121 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-12-17 23:03:46.133 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-17 23:03:46.134 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-12-17 23:03:46.135 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-17 23:03:46.139 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2019-12-17 23:03:46.139 [main] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-12-17 23:03:46.139 [main] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-12-17 23:03:46.146 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2019-12-17 23:03:46.320 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-17 23:03:46.321 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3402 ms
+2019-12-17 23:03:48.179 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-17 23:03:48.744 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-17 23:03:48.789 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-12-17 23:03:48.819 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-17 23:03:48.822 [main] INFO  com.xmu.oomall.OomallApplication - Started OomallApplication in 7.071 seconds (JVM running for 8.713)
+2019-12-17 23:03:48.892 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-12-17 23:03:49.926 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-12-17 23:03:50.070 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-17 23:03:50.096 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:778)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:765)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.xmu.oomall.OomallApplication.main(OomallApplication.java:14)
+Caused by: org.springframework.data.redis.serializer.SerializationException: Cannot serialize; nested exception is org.springframework.core.serializer.support.SerializationFailedException: Failed to serialize object using DefaultSerializer; nested exception is java.lang.IllegalArgumentException: DefaultSerializer requires a Serializable payload but received an object of type [com.xmu.oomall.domain.GoodsPo]
+	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.serialize(JdkSerializationRedisSerializer.java:96)
+	at org.springframework.data.redis.core.AbstractOperations.rawValue(AbstractOperations.java:127)
+	at org.springframework.data.redis.core.DefaultValueOperations.set(DefaultValueOperations.java:254)
+	at com.xmu.oomall.service.PushMessageService.setRedis(PushMessageService.java:27)
+	at com.xmu.oomall.controller.MyApplicationRunner.run(MyApplicationRunner.java:30)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:775)
+	... 5 common frames omitted
+Caused by: org.springframework.core.serializer.support.SerializationFailedException: Failed to serialize object using DefaultSerializer; nested exception is java.lang.IllegalArgumentException: DefaultSerializer requires a Serializable payload but received an object of type [com.xmu.oomall.domain.GoodsPo]
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:68)
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:35)
+	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.serialize(JdkSerializationRedisSerializer.java:94)
+	... 10 common frames omitted
+Caused by: java.lang.IllegalArgumentException: DefaultSerializer requires a Serializable payload but received an object of type [com.xmu.oomall.domain.GoodsPo]
+	at org.springframework.core.serializer.DefaultSerializer.serialize(DefaultSerializer.java:43)
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:63)
+	... 12 common frames omitted
+2019-12-17 23:03:50.099 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-17 23:03:50.133 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-12-17 23:03:50.148 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-12-17 23:06:51.262 [main] INFO  com.xmu.oomall.OomallApplication - Starting OomallApplication on LAPTOP-O7RFFOA8 with PID 18036 (C:\Users\97392\IdeaProjects\oomall\GoodsInfo\target\classes started by 97392 in C:\Users\97392\IdeaProjects\oomall)
+2019-12-17 23:06:51.309 [main] INFO  com.xmu.oomall.OomallApplication - No active profile set, falling back to default profiles: default
+2019-12-17 23:06:52.339 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-17 23:06:52.341 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-17 23:06:52.378 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23ms. Found 0 repository interfaces.
+2019-12-17 23:06:52.635 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-17 23:06:52.853 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-12-17 23:06:52.861 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-17 23:06:52.861 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-12-17 23:06:52.862 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-17 23:06:52.863 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2019-12-17 23:06:52.863 [main] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-12-17 23:06:52.863 [main] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-12-17 23:06:52.866 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2019-12-17 23:06:53.005 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-17 23:06:53.005 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1645 ms
+2019-12-17 23:06:53.954 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-17 23:06:54.251 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-17 23:06:54.285 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-12-17 23:06:54.307 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-17 23:06:54.310 [main] INFO  com.xmu.oomall.OomallApplication - Started OomallApplication in 3.656 seconds (JVM running for 4.756)
+2019-12-17 23:06:54.332 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-12-17 23:06:54.884 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-12-17 23:06:55.235 [RMI TCP Connection(3)-192.168.199.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-17 23:06:55.236 [RMI TCP Connection(3)-192.168.199.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-12-17 23:06:55.244 [RMI TCP Connection(3)-192.168.199.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2019-12-17 23:06:56.007 [RMI TCP Connection(5)-192.168.199.1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-12-17 23:06:56.009 [RMI TCP Connection(5)-192.168.199.1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-12-17 23:09:57.444 [main] INFO  com.xmu.oomall.OomallApplication - Starting OomallApplication on LAPTOP-O7RFFOA8 with PID 17024 (C:\Users\97392\IdeaProjects\oomall\GoodsInfo\target\classes started by 97392 in C:\Users\97392\IdeaProjects\oomall)
+2019-12-17 23:09:57.447 [main] INFO  com.xmu.oomall.OomallApplication - No active profile set, falling back to default profiles: default
+2019-12-17 23:09:58.476 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-17 23:09:58.479 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-17 23:09:58.522 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28ms. Found 0 repository interfaces.
+2019-12-17 23:09:58.814 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-17 23:09:59.057 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-12-17 23:09:59.065 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-17 23:09:59.066 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-12-17 23:09:59.066 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-17 23:09:59.068 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2019-12-17 23:09:59.068 [main] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-12-17 23:09:59.068 [main] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-12-17 23:09:59.071 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2019-12-17 23:09:59.228 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-17 23:09:59.228 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1693 ms
+2019-12-17 23:10:00.194 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-17 23:10:00.492 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-17 23:10:00.525 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-12-17 23:10:00.547 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-17 23:10:00.549 [main] INFO  com.xmu.oomall.OomallApplication - Started OomallApplication in 3.79 seconds (JVM running for 4.963)
+2019-12-17 23:10:00.570 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-12-17 23:10:01.113 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-12-17 23:10:01.154 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-17 23:10:01.161 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:778)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:765)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.xmu.oomall.OomallApplication.main(OomallApplication.java:14)
+Caused by: org.springframework.data.redis.serializer.SerializationException: Cannot serialize; nested exception is org.springframework.core.serializer.support.SerializationFailedException: Failed to serialize object using DefaultSerializer; nested exception is java.lang.IllegalArgumentException: DefaultSerializer requires a Serializable payload but received an object of type [com.xmu.oomall.domain.GoodsPo]
+	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.serialize(JdkSerializationRedisSerializer.java:96)
+	at org.springframework.data.redis.core.AbstractOperations.rawValue(AbstractOperations.java:127)
+	at org.springframework.data.redis.core.DefaultValueOperations.set(DefaultValueOperations.java:254)
+	at com.xmu.oomall.service.PushMessageService.setRedis(PushMessageService.java:27)
+	at com.xmu.oomall.controller.MyApplicationRunner.run(MyApplicationRunner.java:30)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:775)
+	... 5 common frames omitted
+Caused by: org.springframework.core.serializer.support.SerializationFailedException: Failed to serialize object using DefaultSerializer; nested exception is java.lang.IllegalArgumentException: DefaultSerializer requires a Serializable payload but received an object of type [com.xmu.oomall.domain.GoodsPo]
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:68)
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:35)
+	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.serialize(JdkSerializationRedisSerializer.java:94)
+	... 10 common frames omitted
+Caused by: java.lang.IllegalArgumentException: DefaultSerializer requires a Serializable payload but received an object of type [com.xmu.oomall.domain.GoodsPo]
+	at org.springframework.core.serializer.DefaultSerializer.serialize(DefaultSerializer.java:43)
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:63)
+	... 12 common frames omitted
+2019-12-17 23:10:01.166 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-17 23:10:01.181 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-12-17 23:10:01.184 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-12-17 23:12:54.442 [main] INFO  com.xmu.oomall.OomallApplication - Starting OomallApplication on LAPTOP-O7RFFOA8 with PID 8476 (C:\Users\97392\IdeaProjects\oomall\GoodsInfo\target\classes started by 97392 in C:\Users\97392\IdeaProjects\oomall)
+2019-12-17 23:12:54.446 [main] INFO  com.xmu.oomall.OomallApplication - No active profile set, falling back to default profiles: default
+2019-12-17 23:12:55.707 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-17 23:12:55.709 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-17 23:12:55.753 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27ms. Found 0 repository interfaces.
+2019-12-17 23:12:56.027 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-17 23:12:56.275 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-12-17 23:12:56.283 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-17 23:12:56.284 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-12-17 23:12:56.284 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-17 23:12:56.286 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2019-12-17 23:12:56.286 [main] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-12-17 23:12:56.286 [main] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-12-17 23:12:56.290 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2019-12-17 23:12:56.454 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-17 23:12:56.454 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1894 ms
+2019-12-17 23:12:57.418 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-17 23:12:57.730 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-17 23:12:57.771 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-12-17 23:12:57.793 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-17 23:12:57.796 [main] INFO  com.xmu.oomall.OomallApplication - Started OomallApplication in 3.995 seconds (JVM running for 5.143)
+2019-12-17 23:12:57.821 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-12-17 23:12:58.382 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-12-17 23:12:58.441 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-17 23:12:58.449 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:778)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:765)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.xmu.oomall.OomallApplication.main(OomallApplication.java:14)
+Caused by: org.springframework.data.redis.serializer.SerializationException: Cannot serialize; nested exception is org.springframework.core.serializer.support.SerializationFailedException: Failed to serialize object using DefaultSerializer; nested exception is java.lang.IllegalArgumentException: DefaultSerializer requires a Serializable payload but received an object of type [com.xmu.oomall.domain.GoodsPo]
+	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.serialize(JdkSerializationRedisSerializer.java:96)
+	at org.springframework.data.redis.core.AbstractOperations.rawValue(AbstractOperations.java:127)
+	at org.springframework.data.redis.core.DefaultValueOperations.set(DefaultValueOperations.java:235)
+	at com.xmu.oomall.service.PushMessageService.setRedis(PushMessageService.java:27)
+	at com.xmu.oomall.controller.MyApplicationRunner.run(MyApplicationRunner.java:30)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:775)
+	... 5 common frames omitted
+Caused by: org.springframework.core.serializer.support.SerializationFailedException: Failed to serialize object using DefaultSerializer; nested exception is java.lang.IllegalArgumentException: DefaultSerializer requires a Serializable payload but received an object of type [com.xmu.oomall.domain.GoodsPo]
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:68)
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:35)
+	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.serialize(JdkSerializationRedisSerializer.java:94)
+	... 10 common frames omitted
+Caused by: java.lang.IllegalArgumentException: DefaultSerializer requires a Serializable payload but received an object of type [com.xmu.oomall.domain.GoodsPo]
+	at org.springframework.core.serializer.DefaultSerializer.serialize(DefaultSerializer.java:43)
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:63)
+	... 12 common frames omitted
+2019-12-17 23:12:58.453 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-17 23:12:58.467 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-12-17 23:12:58.470 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-12-17 23:16:59.855 [main] INFO  com.xmu.oomall.OomallApplication - Starting OomallApplication on LAPTOP-O7RFFOA8 with PID 15808 (C:\Users\97392\IdeaProjects\oomall\GoodsInfo\target\classes started by 97392 in C:\Users\97392\IdeaProjects\oomall)
+2019-12-17 23:16:59.860 [main] INFO  com.xmu.oomall.OomallApplication - No active profile set, falling back to default profiles: default
+2019-12-17 23:17:01.018 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-17 23:17:01.020 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-17 23:17:01.066 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30ms. Found 0 repository interfaces.
+2019-12-17 23:17:01.324 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-17 23:17:01.550 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-12-17 23:17:01.559 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-17 23:17:01.560 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-12-17 23:17:01.560 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-17 23:17:01.562 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2019-12-17 23:17:01.562 [main] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-12-17 23:17:01.562 [main] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-12-17 23:17:01.565 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2019-12-17 23:17:01.725 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-17 23:17:01.725 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1756 ms
+2019-12-17 23:17:02.651 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-17 23:17:02.946 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-17 23:17:02.982 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-12-17 23:17:03.014 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-17 23:17:03.017 [main] INFO  com.xmu.oomall.OomallApplication - Started OomallApplication in 3.809 seconds (JVM running for 4.858)
+2019-12-17 23:17:03.048 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-12-17 23:17:03.632 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-12-17 23:17:03.768 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-12-17 23:17:03.769 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-12-17 23:17:05.159 [RMI TCP Connection(2)-192.168.199.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-17 23:17:05.159 [RMI TCP Connection(2)-192.168.199.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-12-17 23:17:05.166 [RMI TCP Connection(2)-192.168.199.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 7 ms

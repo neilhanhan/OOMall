@@ -1,141 +1,55 @@
 package com.xmu.oomall.controller;
 
-import com.xmu.oomall.domain.GoodsCategory;
+import com.xmu.oomall.domain.GoodsCategoryPo;
 import com.xmu.oomall.service.GoodsCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
-public class GoodsCategoryController {
+public class GoodsCategoryController{
     @Autowired
-    private GoodsCategoryService goodsCategoryService;
+    GoodsCategoryService goodsCategoryService;
 
-    /**
-     * GET
-     * /categories
-     * return List<goodsCategory>
-     *      finished
-     * POST
-     * /categories
-     * @RequestBody(goodsCategory)
-     * return goodsCategory
-     *      finished
-     * GET
-     * /categories/l1
-     * return List<goodsCategory>
-     *
-     * GET
-     * /categories/{id}
-     * @PathVariable(id)
-     * return goodsCategory
-     *      finished
-     *
-     * PUT
-     * /categories/{id}
-     * @PathVariable(id) @RequestBody(goodsCategory)
-     * return goodsCategory
-     *      finished
-     *
-     * DELETE
-     * /categories/{id}
-     * @PathVariable(id)
-     *
-     * GET
-     * /categories
-     * return List<goodsCategory>
-     *     finished
-     *
-     * GET
-     * /categories/l1
-     * return List<goodsCategory>
-     *
-     * GET
-     * /categories/l1/{id}/l2
-     * @PathVariable(id)
-     * return goodsCategory
-     *
-     * GET
-     * /categories/{id}
-     * @PathVariable(id)
-     * return goodsCategory
-     */
-
-    /**
-     * 查看所有的分类
-     * @return
-     */
     @GetMapping("/categories")
-    public List<GoodsCategory> listGoodsCategory()
+    public Object getAllCategories(@RequestParam("page") Integer page,
+                                   @RequestParam("limit") Integer limit)
     {
-        return goodsCategoryService.listGoodsCategory();
+        return goodsCategoryService.getAllCategories(page,limit);
     }
 
-    /**
-     * 新建一个分类
-     * @param goodsCategory
-     * @return
-     */
     @PostMapping("/categories")
-    public GoodsCategory addGoodsCategory(@RequestBody GoodsCategory goodsCategory)
+    public Object addCategory(@RequestBody GoodsCategoryPo goodsCategoryPo)
     {
-        return goodsCategoryService.addGoodsCategory(goodsCategory);
+        return goodsCategoryService.addCategory(goodsCategoryPo);
     }
 
-    /**
-     * 查看单个分类信息
-     * @param id
-     * @return
-     */
     @GetMapping("/categories/{id}")
-    public GoodsCategory getGoodsCategoryById(@PathVariable Integer id)
+    public Object getCategoryById(@PathVariable("id") Integer id)
     {
-        return goodsCategoryService.getGoodsCategoryById(id);
+        return goodsCategoryService.getCategoryById(id);
     }
 
-    /**
-     * 修改分类信息
-     * @param id
-     * @param goodsCategory
-     * @return
-     */
     @PutMapping("/categories/{id}")
-    public GoodsCategory updateGoodsCategoryById(@PathVariable Integer id, @RequestBody GoodsCategory goodsCategory)
+    public Object updateCategory(@PathVariable("id") Integer id,@RequestBody GoodsCategoryPo goodsCategoryPo)
     {
-        return  goodsCategoryService.updateGoodsCategoryById(id,goodsCategory);
+        return goodsCategoryService.updateCategory(id,goodsCategoryPo);
     }
 
-    /**
-     * 删除单个分类
-     * @param id
-     * @return
-     */
     @DeleteMapping("/categories/{id}")
-    public void deleteGoodsCategory(@PathVariable Integer id)
+    public Object deleteCategory(@PathVariable("id") Integer id)
     {
-        goodsCategoryService.deleteGoodsCategory(id);
+        return goodsCategoryService.deleteCategory(id);
     }
 
-    /**
-     * 查看所有一级分类
-     * @return
-     */
     @GetMapping("/categories/l1")
-    public List<GoodsCategory> listOneLevelGoodsCategory()
+    public Object getLevelOneCategories()
     {
-        return goodsCategoryService.listOneLevelGoodsCategory();
+        return goodsCategoryService.getLevelOneCategories();
     }
 
-    /**
-     * 获取当前一级分类下的二级分类
-     *
-     * @param id 分类类目ID
-     * @return 当前分类栏目
-     */
-    @GetMapping("categories/l1/{id}/l2")
-    public List<GoodsCategory> listSecondLevelGoodsCategoryById(@PathVariable Integer id)
+    @GetMapping("/categories/l1/{id}/l2")
+    public Object getLevelTwoCategories(@PathVariable("id") Integer id)
     {
-        return goodsCategoryService.listSecondLevelGoodsCategoryById(id);
+        return goodsCategoryService.getLevelTwoCategories(id);
     }
 }

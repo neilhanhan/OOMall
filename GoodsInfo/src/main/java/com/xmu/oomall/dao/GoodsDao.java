@@ -22,7 +22,7 @@ public class GoodsDao {
         if(goods.getStatusCode()!=0){
             return goods;
         }
-        return null;
+        return goods;
     }
 
     public Goods findGoodByIdForAdmin(Integer id){
@@ -61,5 +61,21 @@ public class GoodsDao {
         if(goods.getStatusCode()!=0){
             return true;}
         return false;
+    }
+
+    public List<GoodsPo> getGoodsByName(Integer page,Integer limit,String name){
+        PageHelper.startPage(page,limit);
+        List<GoodsPo> goodsPoList=goodsMapper.getGoodsByName(name);
+        return goodsPoList;
+    }
+
+    public List<GoodsPo> getGoodsByNameForAdmin(Integer page,Integer limit,String name){
+        PageHelper.startPage(page,limit);
+        List<GoodsPo> goodsPoList=goodsMapper.getGoodsByName(name);
+        return goodsPoList;
+    }
+
+    public List<GoodsPo> getGoods(){
+        return goodsMapper.getGoods();
     }
 }
