@@ -1,8 +1,9 @@
 package com.xmu.oomall.controller;
 
+import com.xmu.oomall.service.GrouponRuleService;
 import com.xmu.oomall.vo.GrouponRuleVo;
 import com.xmu.oomall.domain.GrouponRulePo;
-import com.xmu.oomall.service.GrouponRuleService;
+import com.xmu.oomall.service.GrouponRuleServiceImpl;
 import com.xmu.oomall.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

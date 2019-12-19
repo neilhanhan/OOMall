@@ -1,7 +1,7 @@
 package com.xmu.oomall.controller;
 
 import com.xmu.oomall.domain.Order;
-import com.xmu.oomall.service.GrouponRuleService;
+import com.xmu.oomall.service.GrouponRuleServiceImpl;
 import com.xmu.oomall.service.PresaleRuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DiscountController {
 
     @Autowired
-    GrouponRuleService grouponRuleService;
+    GrouponRuleServiceImpl grouponRuleServiceImpl;
     @Autowired
     PresaleRuleService presaleRuleService;
 

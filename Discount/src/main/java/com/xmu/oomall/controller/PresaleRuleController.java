@@ -73,7 +73,7 @@ public class PresaleRuleController {
     @GetMapping("/presaleGoods")
     public Object customerGetPresaleGoods(@RequestParam(defaultValue = "1") Integer page,
                                           @RequestParam(defaultValue = "10") Integer limit){
-        List<PresaleRuleVo> presaleRuleVoList = presaleRuleService.adminGetPresaleRule(page, limit);
+        List<PresaleRuleVo> presaleRuleVoList = presaleRuleService.customerGetPresaleRule(page, limit);
         return ResponseUtil.okList(presaleRuleVoList);
     }
 }
