@@ -1,6 +1,7 @@
 package com.xmu.oomall.util;
 
 import com.github.pagehelper.Page;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -144,44 +145,71 @@ public class ResponseUtil {
         return fail(720, "无效团购规则（不存在或失效）");
     }
 
-    public static Object grouponUpdateFail(){
-        return fail(721,"团购规则修改失败");
+    public static Object grouponUpdateFail() {
+        return fail(721, "团购规则修改失败");
     }
 
-    public static Object grouponInsertFail(){
-        return fail(722,"团购规则添加失败");
+    public static Object grouponInsertFail() {
+        return fail(722, "团购规则添加失败");
     }
 
-    public static Object grouponDeleteFail(){
-        return fail(723,"团购规则删除失败");
+    public static Object grouponDeleteFail() {
+        return fail(723, "团购规则删除失败");
     }
 
-    public static Object joinGrouponFail(){
-        return fail(724,"无法参与团购");
+    public static Object joinGrouponFail() {
+        return fail(724, "无法参与团购");
     }
 
     public static Object presaleRuleUnknown() {
         return fail(730, "无效团购规则（不存在或失效）");
     }
 
-    public static Object presaleUpdateFail(){
-        return fail(731,"团购规则修改失败");
+    public static Object presaleUpdateFail() {
+        return fail(731, "团购规则修改失败");
     }
 
-    public static Object presaleInsertFail(){
-        return fail(732,"团购规则添加失败");
+    public static Object presaleInsertFail() {
+        return fail(732, "团购规则添加失败");
     }
 
     public static Object presaleDeleteFail() {
         return fail(733, "团购规则删除失败");
     }
 
-    public static Object joinPresaleFail(){
-        return fail(734,"预售商品无法购买");
+    public static Object joinPresaleFail() {
+        return fail(734, "预售商品无法购买");
     }
 
-    public static Object payoutPresaleFail(){
-        return fail(735,"支付预售尾款失败");
+    public static Object payoutPresaleFail() {
+        return fail(735, "支付预售尾款失败");
     }
 
+    public static Object invaildCouponRuleFail() {
+        return fail(710, "该优惠券规则是无效优惠券规则（不在数据库里的或者逻辑删除）");
+    }
+
+    public static Object couponRuleUpdateFail() {
+        return fail(711, "优惠券规则修改失败");
+    }
+
+    public static Object couponRuleAddFail() {
+        return fail(712, "优惠券规则添加失败");
+    }
+
+    public static Object couponRuleDeleteFail() {
+        return fail(713, "优惠券规则删除失败");
+    }
+
+    public static Object getCouponFail() {
+        return fail(714, "领取优惠券失败");
+    }
+
+    public static Object invaildCouponFail() {
+        return fail(715, "该优惠券是无效优惠券规则（不在数据库里的或者逻辑删除）");
+    }
+
+    public static Object CouponUseFail() {
+        return fail(716, "该优惠券无法使用（存在数据库中，但是“不在使用时间内”等情形）");
+    }
 }

@@ -40,4 +40,35 @@ public interface PresaleRuleMapper {
      * @return PresaleRule
      */
     PresaleRule getPresaleRuleById(Integer id);
+
+    /**
+     * 数据库中增加一个PresaleRule
+     *
+     * @param presaleRule
+     * @return
+     */
+    public Integer addPresaleRule(PresaleRule presaleRule);
+
+    /**
+     * 查找goodsId为所查的，的presaleRule
+     *
+     * @param goodsId
+     * @return
+     */
+    public List<PresaleRule> findPresaleRulesByGoodsId(Integer goodsId);
+
+    /**
+     * 根据id更新PresaleRule
+     *
+     * @param presaleRule
+     * @return
+     */
+    public Integer updatePresaleRuleById(PresaleRule presaleRule);
+
+    /**
+     * 通过id查找PresaleRule
+     * @param id
+     * @return
+     */
+    public PresaleRule findPresaleRuleById(Integer id);
 }
